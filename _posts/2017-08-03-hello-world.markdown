@@ -4,7 +4,7 @@ title:  "Hello world!"
 description: "Because when you start a new `whatever`, how else are you going to name your first attempt?"
 date:   2017-08-03 22:57:27 +0300
 categories: blog
-tags: [design, jekyll]
+tags: [ideas]
 ---
 
 {% highlight ruby %}

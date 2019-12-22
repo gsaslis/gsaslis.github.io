@@ -4,7 +4,7 @@ title:  "Why is Why Not the Greatest Question of All Time?"
 description: ""
 date:   2017-08-23 00:00 +0300
 categories: blog
-tags: [ideas]
+tags: [philosophy, thoughts]
 ---
 
 As any engineer or scientist will tell you, understanding “Why” things work is what makes you 
@@ -12,7 +12,7 @@ good in your field. It’s what allows you to answer important questions that he
 problems in your job, create elegant solutions or advance your science.
 
 
-{% include image.html path="images/posts/why.png" path-detail="images/posts/why.png" alt="Why" %}
+{% include image.html path="posts/why.png" path-detail="posts/why.png" alt="Why" %}
 
 Answering “Why” implies you have acquired a deep understanding of the underlying structure 
 of the system you are studying. It means you can analyze and deduct and apply reason.
