@@ -4,7 +4,7 @@ title:  "GitHub for Managing Offline Communities"
 description: "We all know GitHub as a great online collaboration tool for software projects. But what if we tried to use it to run an offline community?"
 date:   2017-10-23 00:00:00 +0300
 categories: blog
-tags: [oss, community]
+tags: [oss, community, devstaff]
 ---
 
 {% include image.html path="posts/github.png" path-detail="posts/github.png" alt="GitHub" caption="GitHub helps build online communities. How about offline ones?" %}
