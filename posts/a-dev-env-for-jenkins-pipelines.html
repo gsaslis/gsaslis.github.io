@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | A Dev Env for Jenkins Pipelines</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="A Dev Env for Jenkins Pipelines">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines">
+  <meta property="og:description" content="">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines">
+  <meta name="twitter:title" content="A Dev Env for Jenkins Pipelines">
+  <meta name="twitter:description" content="">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-999120b83f984163a7efc1263559c8c4d15b812befe500c91dd96f5c3b41c1c8.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>A Dev Env for Jenkins Pipelines</h1>
+            <p></p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    January 2, 2019
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      6 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/jenkins" title="See all posts with tag 'Jenkins'">Jenkins</a>
+    
+      
+      <a href="/tag/ci" title="See all posts with tag 'Continuous Integration'">Continuous Integration</a>
+    
+      
+      <a href="/tag/testing" title="See all posts with tag 'Software Testing'">Software Testing</a>
+    
+      
+      <a href="/tag/productivity" title="See all posts with tag 'Productivity'">Productivity</a>
+    
+      
+      <a href="/tag/oss" title="See all posts with tag 'Open Source'">Open Source</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>Because as with any “code”, we’d expect “Jenkins pipelines as code” to have a decent development environment too, right?</p>
+
+<p>Well…</p>
+
+<figure>
+   <a href="/assets/posts/jenkins_pipelines_1-6e29629ff28776393e4fcb11abc1f0e1a6e76a035ec6ebf531a653eeecba9d4f.png">
+     <img src="/assets/posts/jenkins_pipelines_1-6e29629ff28776393e4fcb11abc1f0e1a6e76a035ec6ebf531a653eeecba9d4f.png" alt="Jenkins Pipeline" class="zooming" data-rjs="/assets/posts/jenkins_pipelines_1-6e29629ff28776393e4fcb11abc1f0e1a6e76a035ec6ebf531a653eeecba9d4f.png" data-zooming-width="1024" data-zooming-height="512" />
+   </a>
+  <figcaption>
+    
+  </figcaption>
+ </figure>
+
+<p>tl;dr it’s not a dream landscape today…</p>
+
+<p>In the sections below I’ll be keeping some notes (mainly to self, but that will hopefully help a few others who are getting into writing Jenkins pipelines) as a reference for getting up &amp; running. It’s a WIP — and feedback is welcome too!</p>
+
+<p>You see, the team I’m on is now working on extending the automation it has in place, around what we call the “productization” process, here in Red Hat. This is the process that handles releasing a “product” version from an “upstream” open source project.</p>
+
+<p>Our open source projects are on the <a href="https://github.com/3scale">3scale GitHub org</a> — and 3scale is a Red Hat — led fully open source solution to API Management (think auth*, rate limiting, monetization, reverse proxy, etc. as an extra component you deploy in front of your API so you never have to implement that logic in your own codebase. We’ve done it and it’s OSS! Go use that instead! &lt;/pitch&gt;).</p>
+
+<p>Back on topic… The automation that is in place is <strong>based on Jenkins</strong> (we need the flexibility) so even though the pain of maintaining — and upgrading — a self-hosted Jenkins and its plugins over the years hasn’t made me its biggest fan, there is little choice on the matter (for some very valid reasons).</p>
+
+<p>Anyway, let’s start looking into the various points of our development environment for Jenkins pipelines, starting with… the language our pipelines are written in!</p>
+
+<h2 id="groovy-dsl-vs-job-dsl-vs-pipeline-dsl-dynamic-pipeline-vs-scripted-pipeline-vs-dynamic-dsl-vs-groovy">Groovy DSL vs. Job DSL vs. Pipeline DSL (Dynamic Pipeline vs. Scripted Pipeline) vs. Dynamic DSL vs. Groovy</h2>
+
+<p>… what a mess…</p>
+
+<ul>
+  <li>
+    <p>Here is a good StackOverflow answer <a href="https://stackoverflow.com/a/39214771">explaining the <strong>difference between Job DSL and 
+Pipeline DSL</strong></a>, as this is the main separation 
+(tl;dr Job DSL is for <strong>creating</strong> the Jenkins jobs themselves, Pipeline DSL is what their 
+<strong>implementation</strong> is written in. If you’re now thinking, “so I need both?”, unfortunately the 
+answer is “yes”, and if you’re thinking “well that’s not very good, is it?” the answer is — 
+again — “unfortunately, yes”)</p>
+  </li>
+  <li>
+    <p><a href="https://confluence.jetbrains.com/display/GRVY/Scripting+IDE+for+DSL+awareness">GroovyDSL (or <strong>GDSL</strong>) is a scripting framework</a> 
+used in IntelliJ to support external DSLs (like the Jenkins Job DSL). So you basically <strong>export 
+a gdsl file from Jenkins</strong>, install it in IntelliJ, and it now knows how to do some syntax 
+highlighting and code completion for the Job DSL.</p>
+  </li>
+  <li>
+    <p>Considering that the Job DSL is a Groovy-based DSL, yes, <strong>you can also write Groovy in your Job DSLs</strong>. 
+Helpful, but only up to a point. Remember that the Job DSL adds lots of extras, so any groovy 
+tooling you might be hoping to use won’t necessarily cover all your needs here.</p>
+  </li>
+  <li>
+    <p><strong>Dynamic Pipeline vs. Scripted Pipeline</strong>: first of all, remember we are in the “Pipeline DSL” 
+BoundedContext. We’re talking about the implementation of the pipelines, not jobs. To 
+understand the differences, <a href="https://jenkins.io/doc/book/pipeline/syntax/">this is the right place to look</a>.
+tl;dr <strong>Declarative</strong> is more limited, but has <strong>lower learning curve</strong>, making it an ideal choice 
+for simpler pipelines. <strong>Scripted</strong> provides very few limits, but comes with steeper learning 
+curve (Groovy), making it an <strong>ideal choice for power-users</strong> and those with more complex 
+requirements. To make matters more complicated (and flexible), you can use <code class="highlighter-rouge">script</code> blocks 
+even inside Declarative pipelines, where you can use Groovy.</p>
+  </li>
+  <li>
+    <p><em>Dynamic and Scripted</em> above are not to be confused with the <a href="https://github.com/jenkinsci/job-dsl-plugin/wiki/Dynamic-DSL"><strong>Dynamic DSL</strong></a>, which is part 
+of the Job DSL plugin. That’s the part of the Job DSL that adds support for plugins. Is it confusing 
+yet?</p>
+  </li>
+</ul>
+
+<h2 id="valid-syntax--ide-support">Valid syntax &amp; IDE support</h2>
+
+<p>Being used to code completion and automatic syntax highlighting / corrections available at my 
+fingertips, I find it immensely distracting &amp; inefficient to have to focus on getting the 
+syntax right. I mean, I should be focusing on getting the code to do what I want. Syntax is 
+an implementation detail and IDEs abstract that away nicely…</p>
+
+<p>So I normally use IntelliJ. First thing I tried was to find a plugin for the various DSLs 
+used in Jenkins.</p>
+
+<ul>
+  <li>There is a Jenkinsfile plugin, but it’s <a href="https://plugins.jetbrains.com/plugin/10127-jenkinsfile-idea-plugin">not that great</a> 
+unfortunately…</li>
+  <li>Then I went to the <a href="https://github.com/jenkinsci/job-dsl-plugin/wiki/IDE-Support">official docs</a> 
+about IDE support. tl;dr Dynamic Job DSL is not supported, but, yes, you can get some syntax 
+highlighting / auto-completion working (through GDSL we mentioned above).</li>
+</ul>
+
+<p>The problem with Pipeline DSL is that the available constructs depend on the plugins that are installed in the Jenkins instance being used.</p>
+
+<p>Here is an example of the <a href="https://gist.github.com/ggarcia24/fc5acec3288812b34c64a4f2b8f9bca9">most complete GDSL export</a> I have come across.</p>
+
+<p>Or you can download your GDSL by going directly to https://<Jenkins>/job/<Job Name="">/pipeline-syntax/gdsl, as shown below</Job></Jenkins></p>
+
+<figure>
+   <a href="/assets/posts/jenkins_pipelines_2-0d3432063bf6b895e04a8c857f4f8bd1e9bf68fe1154e6362141a0f267d2b489.png">
+     <img src="/assets/posts/jenkins_pipelines_2-0d3432063bf6b895e04a8c857f4f8bd1e9bf68fe1154e6362141a0f267d2b489.png" alt="" class="zooming" data-rjs="/assets/posts/jenkins_pipelines_2-0d3432063bf6b895e04a8c857f4f8bd1e9bf68fe1154e6362141a0f267d2b489.png" data-zooming-width="602" data-zooming-height="546" />
+   </a>
+  <figcaption>
+    
+  </figcaption>
+ </figure>
+
+<p>Exactly because the syntax available in the DSL depends on the plugins installed in your Jenkins instance, it would be ideal if some IDE could check the syntax of my files against the actual Jenkins server that’s going to run them.</p>
+
+<h2 id="enter-vscode">Enter VSCode…</h2>
+
+<figure>
+   <a href="/assets/posts/jenkins_pipelines_3-55019a854de700b96008a29c1cb72a2662daaaa0d2ffe487ed035ec2b7760bb7.jpg">
+     <img src="/assets/posts/jenkins_pipelines_3-55019a854de700b96008a29c1cb72a2662daaaa0d2ffe487ed035ec2b7760bb7.jpg" alt="" class="zooming" data-rjs="/assets/posts/jenkins_pipelines_3-55019a854de700b96008a29c1cb72a2662daaaa0d2ffe487ed035ec2b7760bb7.jpg" data-zooming-width="650" data-zooming-height="434" />
+   </a>
+  <figcaption>
+    
+  </figcaption>
+ </figure>
+
+<p>Well, Visual Studio Code comes with an extension that does exactly that! The 
+<a href="https://jenkins.io/doc/book/pipeline/development/#visualstudio-code-jenkins-pipeline-linter-connector">Jenkins pipeline linter connector</a>.</p>
+
+<p>Reason enough to move away from IntelliJ! (for this project only… for now…)</p>
+
+<h2 id="other-useful-tools--links">Other useful tools / links:</h2>
+
+<ul>
+  <li><a href="https://job-dsl.herokuapp.com/">Jenkins Job DSL Playground</a>: a heroku web application that allows you to test your dsl and verify that the correct XML is generated for the configuration of your job.</li>
+  <li><a href="https://jenkinsci.github.io/job-dsl-plugin/#">the official Job DSL API reference docs</a></li>
+  <li>https://jenkins.io/blog/2017/05/18/pipeline-dev-tools/</li>
+</ul>
+
+<h2 id="testing-jenkins-pipelines">Testing Jenkins Pipelines</h2>
+
+<p>The reality is that developing Jenkins pipelines today still relies on <strong>a lot</strong> of manual 
+testing to make sure everything is working correctly.  : (</p>
+
+<p>Testing the CI server is a big topic in itself and is probably worth a (few) blog post(s) of 
+its own. For now I’ll just leave you with these thoughts:</p>
+
+<p>How easy is it to test the following sequence:</p>
+
+<ol>
+  <li>Spin up a jenkins worker node (this could be an AWS EC2 instance / another cloud VM / a container, etc.)</li>
+  <li>Run init scripts for VM (install some basic tools — e.g. git)</li>
+  <li>Run jenkins pipeline and verify steps where executed as meant to.</li>
+</ol>
+
+<p>That is… how is it to verify that the environment that is being set up to run the other verification tests is correctly set up in itself?</p>
+
+<p>You see, many of the test failures that come up when you are <strong>developing</strong> the pipelines themselves — i.e. when you are still in the development phase — are because of some misconfiguration in the environment itself.</p>
+
+<p>Test failures don’t usually come from broken tests by a developer on your team. That happens later on, once the pipeline is out of development and in “production” — i.e. in use by the development team.</p>
+
+<p>Traditionally, testing across <a href="https://en.wikipedia.org/wiki/System_under_test">SUT</a> barriers like in the example above usually happens with <a href="https://martinfowler.com/bliki/TestDouble.html">test doubles</a>.</p>
+
+<p>I will leave it for a future post to elaborate on this — but just leaving this here so you know it’s there.</p>
+
+<p>Also, some links, for further reading:</p>
+
+<ul>
+  <li><a href="https://github.com/jenkinsci/jenkins-test-harness">Jenkins Test Harness</a></li>
+  <li><a href="https://liatrio.com/local-development-using-jenkins-pipelines/">Running your pipelines locally</a></li>
+  <li>https://github.com/homeaway/jenkins-spock/tree/master/examples/shared-library</li>
+  <li>https://blog.grdryn.me/blog/jenkins-pipeline-library-testing.html</li>
+</ul>
+
+<h2 id="visual-wizard-for-creating-jenkins-pipelines">Visual wizard for creating Jenkins Pipelines</h2>
+
+<p>There is actually a pretty neat editor inside Jenkins itself (once you install the <a href="https://jenkins.io/projects/blueocean/">Blue Ocean</a> plugin).</p>
+
+<p>The trouble is this editor is pretty well… hidden… <strong>I only came across it by accident</strong>!</p>
+
+<p>Here’s <a href="https://jenkins.io/doc/book/blueocean/pipeline-editor/#starting-the-editor">how to access it</a>!
+ (I am linking to the docs, rather than write the instructions here, considering that blue ocean is still under pretty active development and they might change).</p>
+
+<p>It’s great for getting started and putting a basic pipeline together.</p>
+
+<p>You’ll quickly find not every field is fully supported, but — hey, at least it gets you going! ;)</p>
+
+<h2 id="useful">Useful?</h2>
+
+<p>I know the information is not particularly well organized, but it’s meant more as a place to 
+keep links / mindmap rather than a proper post. If enough folks find this interesting I can 
+put some more effort into organizing / expanding the sections here and maybe even creating a 
+series of posts to cover the various points separately.</p>
+
+<p>Oh, and… Thanks for reading this far!! Didn’t think you’d make it… :P :D</p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=A+Dev+Env+for+Jenkins+Pipelines%20-%20https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

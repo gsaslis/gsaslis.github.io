@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | GitHub for Managing Offline Communities</title>
+  <meta name="description" content="We all know GitHub as a great online collaboration tool for software projects. But what if we tried to use it to run an offline community?">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="GitHub for Managing Offline Communities">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/github-for-managing-offline-communities">
+  <meta property="og:description" content="We all know GitHub as a great online collaboration tool for software projects. But what if we tried to use it to run an offline community?">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/github-for-managing-offline-communities">
+  <meta name="twitter:title" content="GitHub for Managing Offline Communities">
+  <meta name="twitter:description" content="We all know GitHub as a great online collaboration tool for software projects. But what if we tried to use it to run an offline community?">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-999120b83f984163a7efc1263559c8c4d15b812befe500c91dd96f5c3b41c1c8.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>GitHub for Managing Offline Communities</h1>
+            <p>We all know GitHub as a great online collaboration tool for software projects. But what if we tried to use it to run an offline community?</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    October 23, 2017
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      7 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/oss" title="See all posts with tag 'Open Source'">Open Source</a>
+    
+      
+      <a href="/tag/community" title="See all posts with tag 'Community'">Community</a>
+    
+      
+      <a href="/tag/devstaff" title="See all posts with tag 'DevStaff'">DevStaff</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <figure>
+   <a href="/assets/posts/github-dd85065bca2c4d2f1b5836747af7799f6f1dc18bbf15294166c21396ac675efa.png">
+     <img src="/assets/posts/github-dd85065bca2c4d2f1b5836747af7799f6f1dc18bbf15294166c21396ac675efa.png" alt="GitHub" class="zooming" data-rjs="/assets/posts/github-dd85065bca2c4d2f1b5836747af7799f6f1dc18bbf15294166c21396ac675efa.png" data-zooming-width="1064" data-zooming-height="718" />
+   </a>
+  <figcaption>
+    GitHub helps build online communities. How about offline ones?
+  </figcaption>
+ </figure>
+
+<p>This is what we sought to discover a couple of years back. That was when we founded DevStaff, a developer community here in Heraklion, Crete. We were just preparing for our first ever meet up and we needed to come up with some way for getting people involved in the community.</p>
+
+<p>Collecting emails on a piece of paper just wasn’t good enough. Remember — this is a community for developers! Clearly, we needed some better way!</p>
+
+<p>And that was when we thought of GitHub. I don’t remember if I was the one who proposed it, but, even if I was, it was certainly not my own idea. I had already heard of it on some podcast somewhere and — even though I can’t remember the rest of the podcast — the GitHub idea stuck!</p>
+
+<blockquote>
+  <p>What better tool than GitHub, to bring a bunch of devs closer together?</p>
+</blockquote>
+
+<p>Hesitations? Yes, plenty! Not everybody knows how to use it. Not everybody would already have an account on GitHub. It would make it more awkward for non-devs to participate that way. This wasn’t what GitHub was built for.</p>
+
+<p>BUT.</p>
+
+<p>The arguments for it were so much more overwhelming!</p>
+
+<ul>
+  <li>If you’re a developer in 2015 (back then) who hasn’t used Git, we should really find any excuse available to help you try.</li>
+  <li>If we’re focusing on developers, whose job essence really is learning, we shouldn’t be afraid of asking them to learn one more new tool.</li>
+  <li>Learning how to use GitHub, the #1 place for open source projects, would make it easier for our community to start contributing more to open source! Because, OSS FTW!</li>
+  <li>We’re picking a tool already built for developers.</li>
+  <li>We wanted to build an open community. Choosing a tool that has served open source software so well sounded like a natural choice.</li>
+  <li>Instead of using GitHub to build software, we’re using it to build our community. That invites us to think about our community like software. Regardless of how well this analogy works, it’s an interesting twist, you have to admit, that we thought might even invite skeptics to give it a try.</li>
+  <li>Come on, isn’t it cool?!? Isn’t this the reason you’re reading this article anyway? :D</li>
+</ul>
+
+<p>Long story short, we were ready to give it a try!</p>
+
+<figure>
+   <a href="/assets/posts/first_devstaff_meetup-0504a322a16f7d8f665a4ca89c3a3197fed1bc7e3d59eda2f2c9b5a584d5fe17.jpg">
+     <img src="/assets/posts/github-dd85065bca2c4d2f1b5836747af7799f6f1dc18bbf15294166c21396ac675efa.png" alt="First DevStaff Meetup" class="zooming" data-rjs="/assets/posts/first_devstaff_meetup-0504a322a16f7d8f665a4ca89c3a3197fed1bc7e3d59eda2f2c9b5a584d5fe17.jpg" data-zooming-width="1200" data-zooming-height="800" />
+   </a>
+  <figcaption>
+    First DevStaff meetup, wayy back in July 2015… Unsuspecting developers came to hear about Git and found themselves joining us on GitHub.
+  </figcaption>
+ </figure>
+
+<p>But this was all back then… We’re now a couple of years down the line, so it’s time for a look back…</p>
+
+<blockquote>
+  <p>But before we dive in, a necessary disclaimer: the below is nothing more but a personal opinion, in no way written to represent the views of the community as a whole. Hopefully, this will also spark some discussion within the community itself. ; )</p>
+</blockquote>
+
+<p>Let’s now go through the jobs we hired it to do and see how well it fit our purpose.</p>
+
+<h2 id="job-1-introduction-to-the-community">Job #1: Introduction to the Community</h2>
+
+<p>We needed some way to explain what our community is about and why people should join. 
+Typically, in an open source project, this is handled in a <code class="highlighter-rouge">README</code> file and that’s what we 
+started using as well.</p>
+
+<p>In retrospect, I feel it has served us well for people who are already familiar with GitHub 
+and know what to expect. For everybody else, we also built a <a href="https://devstaff.gr">website</a>
+, a <a href="https://www.facebook.com/Devstaff/">Facebook page</a> and 
+we also leveraged the <a href="http://www.meetup.com/DevStaff-A-Developer-Community-Gathering-In-Crete/">meetup.com</a> 
+group page.</p>
+
+<p><strong>Pros</strong>: Intuitive place to look (if you know what you’re looking for). No need to have multiple websites. Simple to maintain. Free (as in beer).</p>
+
+<p><strong>Cons</strong>: We could do with better onboarding experience and a more “attractive” look and feel, aimed at new members.</p>
+
+<p><strong>Verdict: B</strong></p>
+
+<h2 id="job-2-documentation">Job #2: Documentation</h2>
+
+<p>In an open source software project, after the “Quickstart guide”, you need a reference 
+documentation: How the thing works, what the rules are, why it’s built that way, and so on.</p>
+
+<p>Much of the same holds for our community. We wanted people to know — first and foremost — 
+<a href="https://github.com/devstaff-crete/DevStaff-Heraklion/blob/master/CodeOfConduct.md">what the rules are</a>.
+Being an open community, we wanted to provide clear guidelines on 
+<a href="https://github.com/devstaff-crete/DevStaff-Heraklion/blob/master/CONTRIBUTING.md">how people can contribute</a> 
+(the standard <code class="highlighter-rouge">CONTRIBUTING</code> file was a natural fit). We wanted them to know why certain 
+“design” decisions were made along the way — like our <a href="https://github.com/devstaff-crete/DevStaff-Heraklion/blob/master/Sponsors.md">sponsorship policy</a>.</p>
+
+<p><strong>Pros</strong>: Version control. Open to pull requests, in case people disagree! Living document — evolves as the community grows.</p>
+
+<p><strong>Cons</strong>: Not much comes in mind here.</p>
+
+<p><strong>Verdict: A+</strong></p>
+
+<h2 id="job-3-contributions">Job #3: Contributions</h2>
+
+<p>Let’s be clear. This was the big &amp; most important one. Giving people a way to start discussions, to actively participate in the community, to share thoughts and views and provide feedback. We knew GitHub was great for that in the virtual, online world; we didn’t know yet how well it would do for a community in the physical “real” world.</p>
+
+<p>DevStaff community members can contribute by (among others):</p>
+
+<ul>
+  <li>helping us <strong>choose upcoming meetup topics</strong>,</li>
+  <li>helping us <strong>prepare and run successful meetups</strong>,</li>
+  <li>helping us <strong>run the community itself</strong>.</li>
+</ul>
+
+<h3 id="choosing-topics">Choosing Topics</h3>
+
+<p>As a generic developers community, most of our meetups have been about very different topics.
+We are not a focused user group, nor do we all share the same love for specific technologies 
+/ stacks, as it happens with many meetup groups in most bigger cities.</p>
+
+<p>Coming from a small town (~200K population), with no active communities (to the best of my 
+knowledge, back in 2015), our goal was to establish a broad community that would serve as the 
+networking infrastructure for all these smaller / more focused communities to spring up.</p>
+
+<p>As such, our meet ups could be about anything software-related. The specifics we left up to 
+the community. We chose <strong>GitHub issues</strong> as a way to let people <a href="https://github.com/devstaff-crete/DevStaff-Heraklion/issues?q=is%3Aopen+is%3Aissue+label%3ATopics">propose their own topics</a>
+, so that others could upvote them. The most popular topic would get selected for the 
+upcoming meetup.</p>
+
+<p>The way we would count upvotes is by using comments with <code class="highlighter-rouge">👍</code> . We even built a tool that 
+<a href="https://analytics.devstaff.gr/">helped us count</a> the most popular topics, which, btw, is 
+<a href="https://github.com/kabitakis/github-analytics">open source</a>. Later on, GitHub allowed emoji 
+reactions, so we adapted to that and the aforementioned tool now supports that too.</p>
+
+<p>(If you’re thinking of using GitHub issues for anything similar to what we did, I’d recommend 
+you check it out. — disclaimer: I did NOT build that, so I’m not blowing my own horn here — 
+It just made things so much simpler for us!)</p>
+
+<p>The only problem here was that <strong>not all proposed topics had available speakers</strong>; but that’s not 
+really related to GitHub. You see, people could still propose a topic even if they couldn’t 
+or didn’t want to present.</p>
+
+<p>Yet several of these topics became very popular, leaving the org team to have to get 
+creative about finding speakers to satisfy the need. Clearly, this was not sustainable over 
+the long term, so we quickly iterated and redefined our criteria such that the topics “with 
+the most votes and at least 2 speakers” could be selected for upcoming meetups.</p>
+
+<p>(Again, we added relevant features to our vote counting tool.)</p>
+
+<h3 id="preparing-and-running-the-meet-ups">Preparing and Running the Meet Ups</h3>
+
+<p>Apart from <strong>creating a separate GitHub repo for each meetup</strong>, so that presenters could 
+upload their presentations and some sample code, etc. GitHub wasn’t much help here.</p>
+
+<p>We handled most of the preparations through direct IM chats (see below, under Communication).</p>
+
+<h3 id="running-the-community-itself">Running the Community Itself</h3>
+
+<p>I was hoping people would use GitHub issues to also raise concerns about how the community itself is ran, so that we could openly discuss and adapt to suggestions from the community. I was expecting this would be touching things like our CoC, discussion on meetup times, places, etc.</p>
+
+<blockquote>
+  <p>This didn’t work as well as I was hoping…</p>
+</blockquote>
+
+<p>Most feedback ended up coming in, in person, at the Org Team meetups.</p>
+
+<h3 id="overall">Overall</h3>
+
+<p>Even though some things didn’t go as well as I was hoping for, looking back, I can’t help 
+but admit that it still <strong>went much better</strong> than I would have originally guessed.</p>
+
+<p><strong>Verdict: A</strong></p>
+
+<h2 id="job-4-communication">Job #4: Communication</h2>
+
+<p>Looking back, I can see 2 main forms of communication that takes place online, within the 
+community: announcements and p2p conversations (i.e. broadcasts and unicasts). Group 
+discussions are more limited.</p>
+
+<p>For <strong>announcements</strong>, GitHub kind of worked. Take new issues for example, or new pull 
+requests (which we used, for example to handle announcement of <a href="https://github.com/devstaff-crete/DevStaff-Heraklion/tree/master/jobs">new job opportunities on our 
+job board</a>). It all 
+worked fine, <strong>as long as people were watching the GitHub repo</strong>.</p>
+
+<p>And not everyone was. Or even knew they had to do that… : (</p>
+
+<p>For <strong>p2p communication</strong>, there is a complete disconnect. GitHub just fails flat out to enable 
+that kind of interaction. Publishing a comment with an @-mention of somebody’s name, is not 
+exactly p2p.</p>
+
+<p>(Btw, I see a huge gap here. I expect GitHub to acquire some player in this space soon 
+(the same way GitLab acquired Mattermost). )</p>
+
+<p><strong>Verdict - C: Find some other way to enable your group’s communication.</strong></p>
+
+<h2 id="job-5-shared-space">Job #5: Shared Space</h2>
+
+<p>One final thing I saw our community had a need for was sharing copies of digital content. 
+Whether that was copies of presentations, or document templates, or sample code, this all 
+fell naturally within GitHub’s reach.</p>
+
+<p><strong>Verdict — A: No major issues here. Even though you may need to provide some help / guidance 
+to people on how to open PRs, etc.</strong></p>
+
+<p>With that I will bring this looong reflection to an end. For now, at least… I hope you 
+found some of this useful. : )</p>
+
+<figure>
+   <a href="/assets/posts/devstaff_bitcoin-8c0d2d408e5f3481f701053bdeb8a062b4352c6bfea2b67ba65590894a283fd8.jpg">
+     <img src="/assets/posts/devstaff_bitcoin-8c0d2d408e5f3481f701053bdeb8a062b4352c6bfea2b67ba65590894a283fd8.jpg" alt="DevStaff Bitcoin meetup" class="zooming" data-rjs="/assets/posts/devstaff_bitcoin-8c0d2d408e5f3481f701053bdeb8a062b4352c6bfea2b67ba65590894a283fd8.jpg" data-zooming-width="4000" data-zooming-height="3000" />
+   </a>
+  <figcaption>
+    And that brings us to today… Talking about Bitcoin sure attracts big crowds!!
+  </figcaption>
+ </figure>
+
+<p>If (you’re still reading this and) you found any good takeaways here, please feel free to 
+drop me a line. I’d love to hear your views, suggestions and similar experiences on running 
+a community!</p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=GitHub+for+Managing+Offline+Communities%20-%20https://gsaslis.github.io/posts/github-for-managing-offline-communities%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/github-for-managing-offline-communities" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

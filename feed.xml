@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Yorgos Saslis</title>
+    <description></description>
+    <link>https://gsaslis.github.io</link>
+    <atom:link href="https://gsaslis.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Time for some rest</title>
+        <description></description>
+        <pubDate>Sun, 22 Sep 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/time-for-some-rest</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/time-for-some-rest</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>SoCraTes UK 2019: Reflections</title>
+        <description></description>
+        <pubDate>Tue, 11 Jun 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/socrates-uk-reflections</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/socrates-uk-reflections</guid>
+      </item>
+    
+      <item>
+        <title>Which Jenkins plugin provides pipeline step X?</title>
+        <description>When writing a Jenkins pipeline, have you ever wondered if the pipeline steps you're using are built-in, or provided by a jenkins plugin?</description>
+        <pubDate>Tue, 23 Apr 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/which-jenkins-plugin-provides-pipeline-step-x</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/which-jenkins-plugin-provides-pipeline-step-x</guid>
+      </item>
+    
+      <item>
+        <title>Developing Jenkins shared libraries and pipelines, in parallel</title>
+        <description>How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?</description>
+        <pubDate>Mon, 11 Feb 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries</guid>
+      </item>
+    
+      <item>
+        <title>Live Stream your Local Meetup (for cheap)</title>
+        <description></description>
+        <pubDate>Tue, 15 Jan 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/live-stream-your-meetup</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/live-stream-your-meetup</guid>
+      </item>
+    
+      <item>
+        <title>A Dev Env for Jenkins Pipelines</title>
+        <description></description>
+        <pubDate>Wed, 02 Jan 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines</guid>
+      </item>
+    
+      <item>
+        <title>Run locally installed NPM binaries without installing globally</title>
+        <description>I try to avoid installing things on my laptop. Installing NPM binaries globally, just because some project needs them, is bad form...</description>
+        <pubDate>Sun, 23 Dec 2018 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally</guid>
+      </item>
+    
+      <item>
+        <title>PGP with Protonmail and Keybase</title>
+        <description>A quick guide on how to set up PGP on Protonmail, using Keybase</description>
+        <pubDate>Wed, 21 Nov 2018 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/pgp-with-protonmail-and-keybase</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/pgp-with-protonmail-and-keybase</guid>
+      </item>
+    
+      <item>
+        <title>Groovy SDK is not configured with IntelliJ + Homebrew Groovy</title>
+        <description>i.e. how to tell IntelliJ where the Groovy SDK has been installed by Homebrew. Hint: it’s a 'hidden' path and IntelliJ doesn’t see that by default.</description>
+        <pubDate>Tue, 21 Aug 2018 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/groovy-sdk-is-not-configured</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/groovy-sdk-is-not-configured</guid>
+      </item>
+    
+      <item>
+        <title>What’s wrong with estimates?</title>
+        <description>Nothing... Apart from pretty much everything with the way we use them...</description>
+        <pubDate>Tue, 20 Feb 2018 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/what-is-wrong-with-estimates</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/what-is-wrong-with-estimates</guid>
+      </item>
+    
   </channel>
 </rss>

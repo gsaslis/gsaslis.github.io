@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | Developing Jenkins shared libraries and pipelines, in parallel</title>
+  <meta name="description" content="How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Developing Jenkins shared libraries and pipelines, in parallel">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries">
+  <meta property="og:description" content="How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries">
+  <meta name="twitter:title" content="Developing Jenkins shared libraries and pipelines, in parallel">
+  <meta name="twitter:description" content="How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-ee46bbc61b334e821e81534b1fd43f3fee6f020ec174b3c2114445695fd48c01.jpg">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-a98c41efc5ed9fcc06ac664c9e2f7a9b3c3b2e0a52357d221fe382f6f4abc8fc.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-87d1f2a3a19b1500e5c1626a0492025ca5f7f97d24540dc5900288e92112925a.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-999120b83f984163a7efc1263559c8c4d15b812befe500c91dd96f5c3b41c1c8.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="Twitter">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Developing Jenkins shared libraries and pipelines, in parallel</h1>
+            <p>How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    February 11, 2019
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      5 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/ci" title="See all posts with tag 'Continuous Integration'">Continuous Integration</a>
+    
+      
+      <a href="/tag/jenkins" title="See all posts with tag 'Jenkins'">Jenkins</a>
+    
+      
+      <a href="/tag/testing" title="See all posts with tag 'Software Testing'">Software Testing</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <figure>
+   <a href="/assets/posts/jenkins_shared_library-a5c53a57ce58f94f42b5344735420de47e91958e5b74f7494e88bdb6e37a4381.jpg">
+     <img src="/assets/posts/jenkins_shared_library-a5c53a57ce58f94f42b5344735420de47e91958e5b74f7494e88bdb6e37a4381.jpg" alt="traditional library" class="zooming" data-rjs="/assets/posts/jenkins_shared_library-a5c53a57ce58f94f42b5344735420de47e91958e5b74f7494e88bdb6e37a4381.jpg" data-zooming-width="4000" data-zooming-height="1517" />
+   </a>
+  <figcaption>
+    Photo of the traditional kind of library by Tamás Mészáros from Pexels https://www.pexels.com/photo/library-university-books-students-12064
+  </figcaption>
+ </figure>
+
+<p>When working with Jenkins Shared Libraries, a problem you’ll run into, sooner or later, is 
+that you’ll want to simultaneously make a change in two places:</p>
+
+<ul>
+  <li>the library code</li>
+  <li>the code in your <code class="highlighter-rouge">Jenkinsfile</code> that uses the modified library code</li>
+</ul>
+
+<p>The problem is that <strong>the modified library code lives in a branch in the library repo</strong>, whereas 
+the code you need to add to the Jenkinsfile to test it will live in a branch inside your 
+project repo (or whatever repo your Jenkinsfile lives in, but — whatever the case — <strong>a 
+different repo to the library one</strong>).</p>
+
+<p>For clarity below, we’ll call the first repo <strong>“library repo”</strong> and the second one <strong>“pipeline repo”</strong>. 
+Each of these needs to have its own (short-lived) branch that will allow you to test your change.</p>
+
+<h2 id="the-easy-approach">The easy approach</h2>
+
+<p>A very easy way to test the new code is to push a new branch to your <em>library repo</em> and then 
+head on over to <strong>Jenkins System settings</strong> and change the default version of the shared library 
+that Jenkins loads from the <em>library repo</em>, to the version in that development branch.</p>
+
+<figure>
+   <a href="/assets/posts/jenkins_shared_library2-a5435c81f99f2305046fb85d2a9f03f88e2b572b481c54cbd2d24bb1edbfd846.png">
+     <img src="/assets/posts/jenkins_shared_library2-a5435c81f99f2305046fb85d2a9f03f88e2b572b481c54cbd2d24bb1edbfd846.png" alt="Jenkins System settings" class="zooming" data-rjs="/assets/posts/jenkins_shared_library2-a5435c81f99f2305046fb85d2a9f03f88e2b572b481c54cbd2d24bb1edbfd846.png" data-zooming-width="2124" data-zooming-height="1536" />
+   </a>
+  <figcaption>
+    Instead of `master` branch, you could simply insert the value of your library repo development branch.
+  </figcaption>
+ </figure>
+
+<p>This way <strong>Jenkins will pick up the changes from the <em>library repo</em> branch</strong> and use the new library feature 
+in the next run of your job. You then just need a branch in your <em>pipeline repo</em>, where you 
+store the code changes for actually using the new code from the library. And then to run a job 
+against this <em>pipeline repo</em> branch.</p>
+
+<p>Of course, this simple / easy way to test things out is far from perfect. It requires a manual 
+step of changing your Jenkins System settings and changing the default library version might 
+a̵f̵f̵e̵c̵t <strong>break!</strong> any other job that relies on it. Maybe a suitable approach for a dev env where 
+you’re just on your own Jenkins, but probably no-go area for a shared Jenkins instance with 
+frequent jobs from other teams.</p>
+
+<h2 id="the-isolation-approach">The isolation approach</h2>
+
+<p>Ideally, you’d want these changes to be isolated from any other job, so your slack 
+notifications don’t start sounding like a ringtone after your teammates’s jobs start 
+randomly failing…</p>
+
+<p>One way to do this is to change the library version your job uses, but from your 
+<code class="highlighter-rouge">Jenkinsfile</code> rather than from the Jenkins System settings. You can do by <a href="https://jenkins.io/doc/book/pipeline/shared-libraries/#using-libraries">explicitly 
+loading the library version</a> 
+you need.</p>
+
+<p>The code, assuming you want to load the version from branch <code class="highlighter-rouge">feature/branch</code>, of your <em>library 
+repo</em>, would look like this:</p>
+
+<p><code class="highlighter-rouge">library "3scale-library@feature/branch"</code></p>
+
+<p>This would allow you to keep your build entirely isolated from others, and test the changes 
+from the library in your code.</p>
+
+<p>The downside with this approach is that the branch name of the <em>library repo</em> then becomes 
+hard-coded. And what’s more, <strong>you don’t want to keep it that way</strong>. You only want to use the 
+version from your feature branch, just while you’re still developing that feature. Once your 
+Pull/Merge request was merged in your <em>library repo</em>, you would want the <em>pipeline repo</em> to use 
+the standard version of the library again (e.g. master).</p>
+
+<h2 id="can-we-do-any-better">Can we do any better?</h2>
+
+<p>Yes, clearly! (Otherwise what would this post be about, right?)</p>
+
+<p>We will base our approach on the above method for loading the library, and use a simple 
+convention:</p>
+
+<blockquote>
+  <p>If a branch exists in library repo, and it has the same name as the branch in the 
+<em>pipeline repo</em>, we will use that version of the library, instead of the standard one.</p>
+</blockquote>
+
+<p>Basically, in our <code class="highlighter-rouge">Jenkinsfile</code> we will try to load the library from <em>library repo</em> branch 
+with the same name as the branch from <em>pipeline repo</em>, that the pipeline is running on.</p>
+
+<p>This branch name is made available as an environment variable in the pipeline DSL, so <strong>we
+never need to commit any branch names in our source</strong>!</p>
+
+<div class="language-groovy highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="n">stage</span><span class="o">(</span><span class="s1">'Load 3scale Library'</span><span class="o">){</span>
+    <span class="n">steps</span> <span class="o">{</span>
+      <span class="n">script</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+          <span class="n">library</span> <span class="nl">identifier:</span> <span class="s2">"3scale-library_branch@${env.BRANCH_NAME}"</span><span class="o">,</span>
+              <span class="nl">retriever:</span> <span class="n">modernSCM</span><span class="o">(</span>
+                  <span class="o">[</span>
+                      <span class="n">$class</span><span class="o">:</span> <span class="s1">'GitSCMSource'</span><span class="o">,</span>
+                      <span class="nl">remote:</span> <span class="s1">'git@&lt;redacted&gt;:3scale/cp-shared-library.git'</span><span class="o">,</span>
+                      <span class="nl">credentialsId:</span> <span class="s1">'&lt;redacted&gt;'</span>
+                  <span class="o">]</span>
+              <span class="o">)</span>
+        <span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">echo</span> <span class="s2">"tried to load library version from ${env.BRANCH_NAME}, but branch does not appear to exist in library repo. Continuing with default version."</span>
+          <span class="n">library</span> <span class="nl">identifier:</span> <span class="s1">'3scale-library_default@master'</span><span class="o">,</span>
+              <span class="nl">retriever:</span> <span class="n">modernSCM</span><span class="o">(</span>
+                  <span class="o">[</span>
+                      <span class="n">$class</span><span class="o">:</span> <span class="s1">'GitSCMSource'</span><span class="o">,</span>
+                      <span class="nl">remote:</span> <span class="s1">'git@&lt;redacted&gt;:3scale/cp-shared-library.git'</span><span class="o">,</span>
+                      <span class="nl">credentialsId:</span> <span class="s1">'&lt;redacted&gt;'</span>
+                  <span class="o">]</span>
+              <span class="o">)</span>
+        <span class="o">}</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="this-is-neat--tidy">This is neat &amp; tidy!</h2>
+
+<p>Because:</p>
+
+<ul>
+  <li>we never need to make any manual changes to Jenkins to start using new code from shared library — just push a new branch, as you normally would</li>
+  <li>we never need to merge untested code to master branch, just so we can test it</li>
+  <li>we never need to commit any branch names to source control (and therefore never need to revert any commits)</li>
+  <li>with the library scm definition entirely a part of the Jenkinsfile, Jenkins system settings don’t have to be modified at all!</li>
+</ul>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>You might notice one limitation in the code above:</p>
+
+<p>the <code class="highlighter-rouge">library</code> step does not allow the same library name to be loaded twice 
+(even though the first load failed… : / ).</p>
+
+<p>As such, we have to resort to the only not-so-elegant bit in our solution: use a different 
+name for the library.</p>
+
+<p><strong>IMPORTANT</strong>: For this to work, you MUST NOT have a library with either of the above two 
+names defined in the global settings with the “Load implicitly” option enabled, because, 
+<a href="https://jenkins.io/doc/book/pipeline/shared-libraries/#library-versions">as per the documentation</a>, 
+the <code class="highlighter-rouge">library</code> step cannot be used to override an implicitly loaded library version.</p>
+
+<p><em>Hope this helps someone out there — took me a few hours to get this setup tested, so I thought I’d save others the trouble…</em></p>
+
+<p><em>Please leave a comment if you think this can be improved further!</em></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Developing+Jenkins+shared+libraries+and+pipelines,+in+parallel%20-%20https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-2c224c53eb697c739f9490c38819a72184f09472739fd9e492272ef174090428.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>
