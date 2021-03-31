@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Yorgos Saslis</title>
+    <description></description>
+    <link>https://gsaslis.github.io</link>
+    <atom:link href="https://gsaslis.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Announcing your Availability in Slack</title>
+        <description>If your team forces you to send a message in some slack channel when you leave your keyboard (or if you have colleagues that do this), this post is for you.</description>
+        <pubDate>Wed, 31 Mar 2021 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/status-updates</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/status-updates</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Acronyms Are Dead! Long Live Acronyms!</title>
+        <description>Acronyms are a pain, but also useful. See how you can get the best of both worlds, so you can both type less and save others having to understand obscure acronyms!</description>
+        <pubDate>Tue, 09 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/acronyms-are-dead-long-live-acronyms</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/acronyms-are-dead-long-live-acronyms</guid>
+      </item>
+    
+      <item>
+        <title>How-to Create Focus: My Routine</title>
+        <description>If you are struggling to focus on a specific work task, and are drowned by ~notifications~ interruptions, you might want to consider a routine that helps you avoid them.</description>
+        <pubDate>Thu, 04 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/creating-focus</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/creating-focus</guid>
+      </item>
+    
+      <item>
+        <title>Working Remotely, From a Virtual Office</title>
+        <description>Even if you don't miss working in an office, there must be *some* parts of office work that you *do* miss, right? A virtual office may help with those.</description>
+        <pubDate>Mon, 01 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/working-from-a-virtual-office</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/working-from-a-virtual-office</guid>
+      </item>
+    
+      <item>
+        <title>Time for some rest</title>
+        <description></description>
+        <pubDate>Sun, 22 Sep 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/time-for-some-rest</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/time-for-some-rest</guid>
+      </item>
+    
+      <item>
+        <title>SoCraTes UK 2019: Reflections</title>
+        <description></description>
+        <pubDate>Tue, 11 Jun 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/socrates-uk-reflections</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/socrates-uk-reflections</guid>
+      </item>
+    
+      <item>
+        <title>Which Jenkins plugin provides pipeline step X?</title>
+        <description>When writing a Jenkins pipeline, have you ever wondered if the pipeline steps you're using are built-in, or provided by a jenkins plugin?</description>
+        <pubDate>Tue, 23 Apr 2019 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/which-jenkins-plugin-provides-pipeline-step-x</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/which-jenkins-plugin-provides-pipeline-step-x</guid>
+      </item>
+    
+      <item>
+        <title>Developing Jenkins shared libraries and pipelines, in parallel</title>
+        <description>How do you develop a Jenkins shared library and a Jenkins pipeline using it, at the same time?</description>
+        <pubDate>Mon, 11 Feb 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/multi-repo-jenkins-shared-libraries</guid>
+      </item>
+    
+      <item>
+        <title>Live Stream your Local Meetup (for cheap)</title>
+        <description></description>
+        <pubDate>Tue, 15 Jan 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/live-stream-your-meetup</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/live-stream-your-meetup</guid>
+      </item>
+    
+      <item>
+        <title>A Dev Env for Jenkins Pipelines</title>
+        <description></description>
+        <pubDate>Wed, 02 Jan 2019 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/a-dev-env-for-jenkins-pipelines</guid>
+      </item>
+    
   </channel>
 </rss>

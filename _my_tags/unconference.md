@@ -1,4 +1,0 @@
----
-slug: unconference
-name: Unconference
----
