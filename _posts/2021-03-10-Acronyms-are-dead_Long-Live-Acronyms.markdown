@@ -2,7 +2,7 @@
 layout: post
 title:  "Acronyms Are Dead! Long Live Acronyms!"
 description: "Acronyms are a pain, but also useful. See how you can get the best of both worlds, so you can both type less and save others having to understand obscure acronyms!"
-date:   2021-03-07 00:00:00 +0300
+date:   2021-03-10 00:00:00 +0300
 categories: blog
 tags: [concentration, focus, IM, slack, remote work]
 ---

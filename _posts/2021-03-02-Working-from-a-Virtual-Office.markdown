@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Working Remotely, From a Virtual Office"
-description: "If your team forces you to send a message in some slack channel when you leave your keyboard (or if you have colleagues that do this), this post is for you."
+description: "Even if you don't miss working in an office, there must be *some* parts of office work that you *do* miss, right? A virtual office may help with those."
 date:   2021-03-02 00:00:00 +0300
 categories: blog
 tags: [remote work, spatial video chat, collaboration]
