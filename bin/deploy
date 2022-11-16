@@ -24,9 +24,9 @@ mv _site/* .
 rm -R _site/
 
 # Push to gh-pages.
-git add -fA
-git commit --allow-empty -m "$(git log -1 --pretty=%B) [ci skip]"
-git push -f -q origin gh-pages
+git add --force --all
+git commit --allow-empty --message "$(git log -1 --pretty=%B) [ci skip]"
+git push --force --quiet origin gh-pages
 
 # Move back to previous branch.
 git checkout -
