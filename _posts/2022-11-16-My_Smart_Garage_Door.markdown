@@ -127,3 +127,7 @@ _Button Type_ in the Shelly. )
 Here's a video with the end solution!
 
 <iframe src="https://player.vimeo.com/video/771449940?h=fa1a6f370e" width="320" height="570" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+
+### Home Assistant Configuration 
+
+You can find all my Home Assistant configuration [here]!(https://github.com/gsaslis/home-assistant-config/). 
