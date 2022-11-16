@@ -130,4 +130,4 @@ Here's a video with the end solution!
 
 ### Home Assistant Configuration 
 
-You can find all my Home Assistant configuration [here]!(https://github.com/gsaslis/home-assistant-config/). 
+You can find all my Home Assistant configuration [here](https://github.com/gsaslis/home-assistant-config/). 
