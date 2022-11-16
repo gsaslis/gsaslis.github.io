@@ -2,7 +2,7 @@
 layout: post
 title:  "How-to: Smart Roller Shutters"
 description: "How to convert your existing roller shutters, so you can operate them from your mobile phone"
-date:   2022-11-16 00:00:00 +0300
+date:   2022-10-26 00:00:00 +0300
 categories: blog
 tags: [home automation, home assistant, iot, smart home ]
 ---
