@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Yorgos Saslis</title>
+    <description></description>
+    <link>https://gsaslis.github.io</link>
+    <atom:link href="https://gsaslis.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Controlling your Garage Door from your Phone</title>
+        <description>How to convert your existing garage door, so you can operate it from your mobile phone</description>
+        <pubDate>Tue, 15 Nov 2022 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/my-smart-garage-door</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/my-smart-garage-door</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>How-to: Smart Roller Shutters</title>
+        <description>How to convert your existing roller shutters, so you can operate them from your mobile phone</description>
+        <pubDate>Wed, 26 Oct 2022 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/smart-roller-shutters</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/smart-roller-shutters</guid>
+      </item>
+    
+      <item>
+        <title>I will never work for you</title>
+        <description>A list of industry sectors that I would never like to work for.</description>
+        <pubDate>Mon, 25 Jul 2022 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/i-will-never-work-for-you</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/i-will-never-work-for-you</guid>
+      </item>
+    
+      <item>
+        <title>Effective Meetings</title>
+        <description>Many meetings are a pain. But the principles below take most of that pain away!</description>
+        <pubDate>Mon, 10 Jan 2022 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/effective-meetings</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/effective-meetings</guid>
+      </item>
+    
+      <item>
+        <title>What’s up with Web3 ?</title>
+        <description>A lot of hype around web3, but also promising developments around decentralization!</description>
+        <pubDate>Thu, 06 Jan 2022 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/whats-up-with-web3</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/whats-up-with-web3</guid>
+      </item>
+    
+      <item>
+        <title>No DMs For Work Tasks</title>
+        <description>This post explains why you should 'never' discuss about work tasks using Direct/Private Messages (DM/PM)!</description>
+        <pubDate>Thu, 12 Aug 2021 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/no-dms-for-work-tasks</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/no-dms-for-work-tasks</guid>
+      </item>
+    
+      <item>
+        <title>Announcing your Availability in Slack</title>
+        <description>If your team forces you to send a message in some slack channel when you leave your keyboard (or if you have colleagues that do this), this post is for you.</description>
+        <pubDate>Wed, 31 Mar 2021 00:00:00 +0300</pubDate>
+        <link>https://gsaslis.github.io/posts/status-updates</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/status-updates</guid>
+      </item>
+    
+      <item>
+        <title>Acronyms Are Dead! Long Live Acronyms!</title>
+        <description>Acronyms are a pain, but also useful. See how you can get the best of both worlds, so you can both type less and save others having to understand obscure acronyms!</description>
+        <pubDate>Tue, 09 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/acronyms-are-dead-long-live-acronyms</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/acronyms-are-dead-long-live-acronyms</guid>
+      </item>
+    
+      <item>
+        <title>How-to Create Focus: My Routine</title>
+        <description>If you are struggling to focus on a specific work task, and are drowned by ~notifications~ interruptions, you might want to consider a routine that helps you avoid them.</description>
+        <pubDate>Thu, 04 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/creating-focus</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/creating-focus</guid>
+      </item>
+    
+      <item>
+        <title>Working Remotely, From a Virtual Office</title>
+        <description>Even if you don't miss working in an office, there must be *some* parts of office work that you *do* miss, right? A virtual office may help with those.</description>
+        <pubDate>Mon, 01 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://gsaslis.github.io/posts/working-from-a-virtual-office</link>
+        <guid isPermaLink="true">https://gsaslis.github.io/posts/working-from-a-virtual-office</guid>
+      </item>
+    
   </channel>
 </rss>

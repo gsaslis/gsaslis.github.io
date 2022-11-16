@@ -1,40 +1,904 @@
----
-layout: default
-title: "Tags"
-description: "Tag cloud from all the posts"
-permalink: /tags
-sitemap: false
----
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | Tags</title>
+  <meta name="description" content="Tag cloud from all the posts">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div class="tags-page">
+  <meta property="og:title" content="Tags">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/tags">
+  <meta property="og:description" content="Tag cloud from all the posts">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/tags">
+  <meta name="twitter:title" content="Tags">
+  <meta name="twitter:description" content="Tag cloud from all the posts">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-d5801d06410d8e99a9f1a0a91d294240c809fc7e3e89428e2e54fa8c44121777.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-400382f1c93627c7e795715635ee93ff3c8cabfac63ba99966efbd9c1a0a734b.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-9c570dbf67317767203aaee0804570dad3a87129a343653d8b34a5b912f84802.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+
+    <li>
+      <a rel="me" href="https://chaos.social/@yorgos" target="_blank" title="Follow me on Mastodon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+  <use href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon" xlink:href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon"></use>
+</svg>
+
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="I don't really use Twitter any more">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <div class="tags-page">
   <h1 class="tags-page-header">
     Tags
   </h1>
 
-  {% assign my_tags = site.collections | where: "label", "my_tags" | first %}
+  
 
-  {% assign sorted_tags = site.tags | sort %}
+  
 
-  {% for tag in sorted_tags %}
+  
 
-    {% assign tag_slug = tag | first %}
-    {% assign upcase_tag_slug = tag_slug | upcase %}
-    {% assign no_of_posts = tag | last | size %}
+    
+    
+    
 
-      {% for my_tag in my_tags.docs %}
-        {% if tag_slug == my_tag.slug %}
-          {% assign tag_name = my_tag.name %}
-        {% endif %}
-      {% endfor %}
-      {% assign upcase_tag_name = tag_name | upcase %}
+      
+      
 
-    {% if upcase_tag_slug != "PROJECT" %}
+    
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="tag-cloud" href="{{ 'tag/' | relative_url }}{{ tag_slug }}" title="See all posts by {{ upcase_tag_name }} tag"
-      style="font-size: {{ no_of_posts  |  times: 15 | plus: 120  }}%">
-        <span>{{ upcase_tag_name }}<small>({{ no_of_posts }})</small></span>
+      <a class="tag-cloud" href="/tag/IM" title="See all posts by  tag"
+      style="font-size: 165%">
+        <span><small>(3)</small></span>
       </a>
-    {% endif %}
+    
 
-  {% endfor %}
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/agile" title="See all posts by AGILE SOFTWARE DEVELOPMENT tag"
+      style="font-size: 135%">
+        <span>AGILE SOFTWARE DEVELOPMENT<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/agile software development" title="See all posts by AGILE SOFTWARE DEVELOPMENT tag"
+      style="font-size: 135%">
+        <span>AGILE SOFTWARE DEVELOPMENT<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/bash" title="See all posts by BASH tag"
+      style="font-size: 135%">
+        <span>BASH<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/bitcoin" title="See all posts by BASH tag"
+      style="font-size: 135%">
+        <span>BASH<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/ci" title="See all posts by CONTINUOUS INTEGRATION tag"
+      style="font-size: 165%">
+        <span>CONTINUOUS INTEGRATION<small>(3)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/collaboration" title="See all posts by CONTINUOUS INTEGRATION tag"
+      style="font-size: 150%">
+        <span>CONTINUOUS INTEGRATION<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/community" title="See all posts by COMMUNITY tag"
+      style="font-size: 180%">
+        <span>COMMUNITY<small>(4)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/concentration" title="See all posts by COMMUNITY tag"
+      style="font-size: 165%">
+        <span>COMMUNITY<small>(3)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/deep work" title="See all posts by COMMUNITY tag"
+      style="font-size: 135%">
+        <span>COMMUNITY<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/design" title="See all posts by DESIGN tag"
+      style="font-size: 135%">
+        <span>DESIGN<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/devstaff" title="See all posts by DEVSTAFF tag"
+      style="font-size: 180%">
+        <span>DEVSTAFF<small>(4)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/ethereum" title="See all posts by DEVSTAFF tag"
+      style="font-size: 135%">
+        <span>DEVSTAFF<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/ethics" title="See all posts by DEVSTAFF tag"
+      style="font-size: 135%">
+        <span>DEVSTAFF<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/focus" title="See all posts by FOCUS tag"
+      style="font-size: 180%">
+        <span>FOCUS<small>(4)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/home assistant" title="See all posts by FOCUS tag"
+      style="font-size: 150%">
+        <span>FOCUS<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/home automation" title="See all posts by FOCUS tag"
+      style="font-size: 150%">
+        <span>FOCUS<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/ideas" title="See all posts by RANDOM IDEAS tag"
+      style="font-size: 150%">
+        <span>RANDOM IDEAS<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/iot" title="See all posts by RANDOM IDEAS tag"
+      style="font-size: 150%">
+        <span>RANDOM IDEAS<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/jenkins" title="See all posts by JENKINS tag"
+      style="font-size: 165%">
+        <span>JENKINS<small>(3)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/meetings" title="See all posts by JENKINS tag"
+      style="font-size: 135%">
+        <span>JENKINS<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/mobile" title="See all posts by MOBILE tag"
+      style="font-size: 135%">
+        <span>MOBILE<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/npm" title="See all posts by NPM tag"
+      style="font-size: 135%">
+        <span>NPM<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/openspace" title="See all posts by OPEN SPACE tag"
+      style="font-size: 135%">
+        <span>OPEN SPACE<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/oss" title="See all posts by OPEN SOURCE tag"
+      style="font-size: 195%">
+        <span>OPEN SOURCE<small>(5)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/philosophy" title="See all posts by PHILOSOPHY tag"
+      style="font-size: 150%">
+        <span>PHILOSOPHY<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/privacy" title="See all posts by PRIVACY tag"
+      style="font-size: 150%">
+        <span>PRIVACY<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/productivity" title="See all posts by PRODUCTIVITY tag"
+      style="font-size: 165%">
+        <span>PRODUCTIVITY<small>(3)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/programming" title="See all posts by PROGRAMMING tag"
+      style="font-size: 150%">
+        <span>PROGRAMMING<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/recruiting" title="See all posts by PROGRAMMING tag"
+      style="font-size: 135%">
+        <span>PROGRAMMING<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/remote work" title="See all posts by PROGRAMMING tag"
+      style="font-size: 195%">
+        <span>PROGRAMMING<small>(5)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/slack" title="See all posts by PROGRAMMING tag"
+      style="font-size: 165%">
+        <span>PROGRAMMING<small>(3)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/smart home" title="See all posts by PROGRAMMING tag"
+      style="font-size: 150%">
+        <span>PROGRAMMING<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/society" title="See all posts by PROGRAMMING tag"
+      style="font-size: 135%">
+        <span>PROGRAMMING<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/softwarecraft" title="See all posts by SOFTWARE CRAFT tag"
+      style="font-size: 135%">
+        <span>SOFTWARE CRAFT<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/spatial video chat" title="See all posts by SOFTWARE CRAFT tag"
+      style="font-size: 135%">
+        <span>SOFTWARE CRAFT<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/technology" title="See all posts by TECHNOLOGY tag"
+      style="font-size: 150%">
+        <span>TECHNOLOGY<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/testing" title="See all posts by SOFTWARE TESTING tag"
+      style="font-size: 180%">
+        <span>SOFTWARE TESTING<small>(4)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/thoughts" title="See all posts by RANDOM THOUGHTS tag"
+      style="font-size: 150%">
+        <span>RANDOM THOUGHTS<small>(2)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/unconference" title="See all posts by UNCONFERENCE tag"
+      style="font-size: 135%">
+        <span>UNCONFERENCE<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/usability" title="See all posts by USABILITY tag"
+      style="font-size: 135%">
+        <span>USABILITY<small>(1)</small></span>
+      </a>
+    
+
+  
+
+    
+    
+    
+
+      
+      
+
+    
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="tag-cloud" href="/tag/web3" title="See all posts by USABILITY tag"
+      style="font-size: 135%">
+        <span>USABILITY<small>(1)</small></span>
+      </a>
+    
+
+  
 </div>
+
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-1a8f6e33220f845e569c20b3c09a5d43f87908ea7168ea139ce2135770f7b1b5.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

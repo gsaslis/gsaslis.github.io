@@ -1,4 +1,0 @@
----
-slug: jenkins
-name: Jenkins
----

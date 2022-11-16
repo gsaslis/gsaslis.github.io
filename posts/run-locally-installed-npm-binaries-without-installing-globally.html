@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | Run locally installed NPM binaries without installing globally</title>
+  <meta name="description" content="I try to avoid installing things on my laptop. Installing NPM binaries globally, just because some project needs them, is bad form...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Run locally installed NPM binaries without installing globally">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally">
+  <meta property="og:description" content="I try to avoid installing things on my laptop. Installing NPM binaries globally, just because some project needs them, is bad form...">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally">
+  <meta name="twitter:title" content="Run locally installed NPM binaries without installing globally">
+  <meta name="twitter:description" content="I try to avoid installing things on my laptop. Installing NPM binaries globally, just because some project needs them, is bad form...">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-d5801d06410d8e99a9f1a0a91d294240c809fc7e3e89428e2e54fa8c44121777.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-400382f1c93627c7e795715635ee93ff3c8cabfac63ba99966efbd9c1a0a734b.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-9c570dbf67317767203aaee0804570dad3a87129a343653d8b34a5b912f84802.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+
+    <li>
+      <a rel="me" href="https://chaos.social/@yorgos" target="_blank" title="Follow me on Mastodon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+  <use href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon" xlink:href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon"></use>
+</svg>
+
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="I don't really use Twitter any more">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Run locally installed NPM binaries without installing globally</h1>
+            <p>I try to avoid installing things on my laptop. Installing NPM binaries globally, just because some project needs them, is bad form...</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    December 23, 2018
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      2 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/npm" title="See all posts with tag 'NPM'">NPM</a>
+    
+      
+      <a href="/tag/bash" title="See all posts with tag 'Bash'">Bash</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>This is probably really obvious to folks who work with node.js / npm on a day-to-day basis, but:</p>
+
+<p>a. I don’t
+b. <del>googling</del> duckduckgoing for this wasn’t very helpful, so I thought I’d keep a note-to-self here.</p>
+
+<p>My problem was that I downloaded a project whose instructions said something along the lines of:</p>
+
+<blockquote>
+  <p>Install with <code class="highlighter-rouge">npm install -g &lt;binary_name&gt;</code> and verify installation by running <binary_name> --version .</binary_name></p>
+</blockquote>
+
+<p>I don’t like that -g which stands for <code class="highlighter-rouge">--global</code>, and requires root permissions, so I just wanted to install this package locally.</p>
+
+<p>So I just ran <code class="highlighter-rouge">npm install</code>.</p>
+
+<p>And skipping the <code class="highlighter-rouge">-g</code> meant there was no <binary_name> to be found anywhere and I tried quite a few places (from the google search:</binary_name></p>
+
+<ul>
+  <li><code class="highlighter-rouge">.bin</code></li>
+  <li><code class="highlighter-rouge">.node_modules/.bin</code></li>
+  <li><code class="highlighter-rouge">lib/</code></li>
+  <li><code class="highlighter-rouge">$(npm bin)</code></li>
+</ul>
+
+<p>In the end, the solution was to look inside the <code class="highlighter-rouge">package.json</code> and find the <code class="highlighter-rouge">bin</code> section:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"binary_name"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"some awesome binary"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"index.js"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo </span><span class="se">\"</span><span class="s2">no tests</span><span class="se">\"</span><span class="s2"> &amp;&amp; exit 1"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"bin"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"&lt;binary_name&gt;"</span><span class="p">:</span><span class="w"> </span><span class="s2">"./index.js"</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some cool person"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+     </span><span class="err">...</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"devDependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>In that section, you’ll see that there is a <code class="highlighter-rouge">.index.js</code> as the <code class="highlighter-rouge">binary_name</code>.</p>
+
+<h2 id="tldr-solution">tl;dr Solution</h2>
+
+<p>It was as simple as creating an alias in my shell :</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x index.js
+<span class="nv">$ </span><span class="nb">alias</span> &lt;binary_name&gt;<span class="o">=</span><span class="s2">"</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">/index.js"</span>
+<span class="nv">$ </span>&lt;binary_name&gt; <span class="nt">--version</span>
+1.0.0
+</code></pre></div></div>
+
+<p><em>Needless to say, but: substitute <code class="highlighter-rouge">&lt;binary_name&gt;</code> for the name of the binary you’re struggling with.</em></p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Run+locally+installed+NPM+binaries+without+installing+globally%20-%20https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/run-locally-installed-npm-binaries-without-installing-globally" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-1a8f6e33220f845e569c20b3c09a5d43f87908ea7168ea139ce2135770f7b1b5.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

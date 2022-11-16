@@ -1,4 +1,0 @@
----
-slug: devstaff
-name: DevStaff
----

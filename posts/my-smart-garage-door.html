@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | Controlling your Garage Door from your Phone</title>
+  <meta name="description" content="How to convert your existing garage door, so you can operate it from your mobile phone">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Controlling your Garage Door from your Phone">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/my-smart-garage-door">
+  <meta property="og:description" content="How to convert your existing garage door, so you can operate it from your mobile phone">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/my-smart-garage-door">
+  <meta name="twitter:title" content="Controlling your Garage Door from your Phone">
+  <meta name="twitter:description" content="How to convert your existing garage door, so you can operate it from your mobile phone">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-d5801d06410d8e99a9f1a0a91d294240c809fc7e3e89428e2e54fa8c44121777.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-400382f1c93627c7e795715635ee93ff3c8cabfac63ba99966efbd9c1a0a734b.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-9c570dbf67317767203aaee0804570dad3a87129a343653d8b34a5b912f84802.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+
+    <li>
+      <a rel="me" href="https://chaos.social/@yorgos" target="_blank" title="Follow me on Mastodon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+  <use href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon" xlink:href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon"></use>
+</svg>
+
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="I don't really use Twitter any more">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>Controlling your Garage Door from your Phone</h1>
+            <p>How to convert your existing garage door, so you can operate it from your mobile phone</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    November 15, 2022
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      5 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/home automation" title="See all posts with tag ''"></a>
+    
+      
+      <a href="/tag/home assistant" title="See all posts with tag ''"></a>
+    
+      
+      <a href="/tag/iot" title="See all posts with tag ''"></a>
+    
+      
+      <a href="/tag/smart home" title="See all posts with tag ''"></a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <p>Most people I talk to are very <strong>sceptical</strong> about any kind of smart home automation
+around entry points to their home: if it’s hacked, their house is open to intruders! 😱</p>
+
+<p>I have 2 very good reasons why this isn’t so much of a concern to me:</p>
+
+<ol>
+  <li>my home automation setup <strong>isn’t accessible through the internet</strong> - only my local WiFi.
+(and, yes, that means that even <strong>I</strong> cannot access it when I am away from home!)</li>
+  <li>the garage door <strong>isn’t an entry point</strong> in itself. There is another door that locks after it.</li>
+</ol>
+
+<p>With that in mind, this was one of the very first home automations I wanted to set up.
+<strong>BUT</strong> I ran into a bit of a problem the first time I did… 😅</p>
+
+<h2 id="read-this-so-you-dont-fry-your-existing-door-controller">Read this so you don’t fry your existing door controller!</h2>
+
+<p>I wasn’t careful enough with the Shelly device I used. 😐 I read the instructions for
+the <a href="https://www.shelly.cloud/knowledge-base/devices/shelly-1/">Shelly1</a> and I <strong>naively</strong> assumed that it would be pretty much the same for Shelly1 PM… This is the same kind of assumption a modern city person might make, when they find themselves in the wild, and mistake a wolf for a dog. Only they won’t survive to talk about it. I did. It is my garage door that didn’t survive. 🪦</p>
+
+<p>The <a href="https://www.shelly.cloud/knowledge-base/devices/shelly-1pm/">Shelly1 PM</a> does not 
+have “dry contacts”, meaning that the output is the same as the input 
+(i.e. AC power, in my case) and 230V AC power was pretty deadly where 
+my garage door innocently expected a simple 5v contact. 😭</p>
+
+<h2 id="️️-warning-mains-voltage-is-dangerous-proceed-at-your-own-risk-️️">⛔️⛔️ WARNING: MAINS VOLTAGE IS DANGEROUS!! PROCEED AT YOUR OWN RISK! ⛔️⛔️</h2>
+
+<p>Please consult with an electrician if at all unsure. Frying devices is 
+nothing compared to toying with your own life, or the safety of your home!</p>
+
+<h2 id="hardware-requirements">Hardware Requirements</h2>
+
+<p>This is a pretty simple one. You just need:</p>
+
+<ul>
+  <li>A <strong>switch/button</strong> that signals your Garage Door controller. If you only operate your
+garage door through a remote control, you will need some other bridge (that 
+I haven’t found yet). But, <strong>do</strong> look into the possibility that your garage
+door controller supports a button - which simply hasn’t been installed. That would 
+allow you to a setup similar to this.</li>
+  <li>1 * Shelly 1 (NOT a Shelly 1 PM !!)</li>
+  <li>Screwdriver</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="step-1-prepare-your-shelly">Step 1: Prepare your Shelly</h3>
+
+<figure>
+   <a href="/assets/posts/garage_door/shelly1-0b27ac346ad071f45452470bea3610cff99936e1e33966722aa31eac2668a7f0.jpg">
+     <img src="/assets/posts/garage_door/shelly1-0b27ac346ad071f45452470bea3610cff99936e1e33966722aa31eac2668a7f0.jpg" alt="Shelly1 device" class="zooming" data-rjs="/assets/posts/garage_door/shelly1-0b27ac346ad071f45452470bea3610cff99936e1e33966722aa31eac2668a7f0.jpg" data-zooming-width="3024" data-zooming-height="4032" />
+   </a>
+  <figcaption>
+    Prepare your Shelly1 device
+  </figcaption>
+ </figure>
+
+<p>It’s better to follow these steps in the comfort of your own desk, before 
+moving to your garage to connect the Shelly.</p>
+
+<ul>
+  <li>Connect it to the power</li>
+  <li>Connect to its WiFi Access point</li>
+  <li>Navigate to 192.168.33.1 from your browser</li>
+  <li>Set Button type to “Edge Switch” (if you have a pushbutton for the garage door 
+controller, like I do - see below.)</li>
+  <li>Set MQTT server connection details (I prefer this over the Shelly Integration)</li>
+  <li>Set WiFi client details, so that Shelly can connect to your local WiFi network.</li>
+</ul>
+
+<h3 id="step-2-prepare-garage-door-button">Step 2: Prepare Garage Door Button</h3>
+
+<p>Next, find the button that controls your garage door:</p>
+
+<figure>
+   <a href="/assets/posts/garage_door/garage_door_button-1e14d91c7643bc516f0f6d8abc708d6f2aa59b517c0df17c4970e601e3e3fc4c.jpg">
+     <img src="/assets/posts/garage_door/garage_door_button-1e14d91c7643bc516f0f6d8abc708d6f2aa59b517c0df17c4970e601e3e3fc4c.jpg" alt="Button controlling Garage Door" class="zooming" data-rjs="/assets/posts/garage_door/garage_door_button-1e14d91c7643bc516f0f6d8abc708d6f2aa59b517c0df17c4970e601e3e3fc4c.jpg" data-zooming-width="3024" data-zooming-height="4032" />
+   </a>
+  <figcaption>
+    The black push button ☝️ controls my garage door
+  </figcaption>
+ </figure>
+
+<figure>
+   <a href="/assets/posts/garage_door/garage_door_button_back-9b06ff3bad9667246e2ead6cce7345fc675b2c06fbf29413c483e0947841fea1.jpg">
+     <img src="/assets/posts/garage_door/garage_door_button_back-9b06ff3bad9667246e2ead6cce7345fc675b2c06fbf29413c483e0947841fea1.jpg" alt="Button controlling Garage Door" class="zooming" data-rjs="/assets/posts/garage_door/garage_door_button_back-9b06ff3bad9667246e2ead6cce7345fc675b2c06fbf29413c483e0947841fea1.jpg" data-zooming-width="4032" data-zooming-height="3024" />
+   </a>
+  <figcaption>
+    Just 2 wires on the push button ☝️.
+  </figcaption>
+ </figure>
+
+<p>The operation is very simple: when the button is pushed, the circuit closes
+and the garage door receives the signal to open / close.</p>
+
+<h3 id="step-3-operate-garage-door-with-just-shelly">Step 3: Operate Garage Door with Just Shelly</h3>
+
+<p>Before trying to get everything working together, let’s verify that the <strong>Shelly1</strong> 
+can operate the garage door controller.</p>
+
+<ul>
+  <li>Connect the Shelly1 to Line (L) and Neutral (N), so it can turn on.</li>
+  <li>To be 100% sure that you won’t fry your garage door controller, turn on Shelly1
+and turn on relay (through the web interface, etc.) and measure with your multimeter 
+what the output is. If you see 230V AC, STOP!!! 😅</li>
+  <li>Connect the 2 cables that were connected to your pushbutton (step 2) to the Shelly 
+<strong>Input (I)</strong> and <strong>Output (O)</strong></li>
+  <li>With that, turn power back on and let the Shelly power on.</li>
+  <li>Now try turning on the Shelly, and turn on the relay (from the web interface, etc. as before)
+That should open/close your garage door!!</li>
+  <li>If it didn’t, try changing the cable you’ve connected to Input to Output and vice-versa.</li>
+  <li>If that works, you’re almost there!!</li>
+</ul>
+
+<p>See also the picture below:</p>
+
+<figure>
+   <a href="/assets/posts/garage_door/shelly_controlled_garage_door-e7a6b50abedef89e6ec081896ad0923e21992b1c4af84fa511db6a2155766c39.jpg">
+     <img src="/assets/posts/garage_door/shelly_controlled_garage_door-e7a6b50abedef89e6ec081896ad0923e21992b1c4af84fa511db6a2155766c39.jpg" alt="Button controlling Garage Door" class="zooming" data-rjs="/assets/posts/garage_door/shelly_controlled_garage_door-e7a6b50abedef89e6ec081896ad0923e21992b1c4af84fa511db6a2155766c39.jpg" data-zooming-width="3024" data-zooming-height="4032" />
+   </a>
+  <figcaption>
+    Connect the Shelly directly to the Garage Door controller ☝️. No switch yet.
+  </figcaption>
+ </figure>
+
+<h3 id="step-4-connect-the-pushbutton">Step 4: Connect the Pushbutton</h3>
+
+<p>Now it’s time to connect the push button, so we can control the garage door from <strong>both</strong> 
+the Shelly, <strong>and</strong> the button on the wall.</p>
+
+<p>As you can see in the pictures below, connect:</p>
+
+<ul>
+  <li>Leave the Output (O) connected, from the previous step.</li>
+  <li>Connect the input cable coming from the garage door controller (I) with:
+    <ul>
+      <li>the Input cable going <strong>into</strong> the wall switch / push button</li>
+      <li>the Shelly1 Input (I)</li>
+    </ul>
+  </li>
+  <li>Connect the return cable from the wall switch into the Shelly1 <strong>Switch (SW)</strong> position.</li>
+  <li>All Shelly1 connection slots should now be filled, as per the photos below.</li>
+  <li>Your push button should now flip the state of the Shelly1. Please remember to configure
+it as an edge switch so that every hit will change the state. (If you don’t have a push 
+button, but rather a different kind of switch, you will probably need to pick a different
+<em>Button Type</em> in the Shelly. )</li>
+</ul>
+
+<figure>
+   <a href="/assets/posts/garage_door/shelly_with_pushbutton1-e6d37dd252c91b3b173c50d94695dcdd0ff690f241d1884a6dbf76794108f8fb.jpg">
+     <img src="/assets/posts/garage_door/shelly_with_pushbutton1-e6d37dd252c91b3b173c50d94695dcdd0ff690f241d1884a6dbf76794108f8fb.jpg" alt="Shelly connected with push button" class="zooming" data-rjs="/assets/posts/garage_door/shelly_with_pushbutton1-e6d37dd252c91b3b173c50d94695dcdd0ff690f241d1884a6dbf76794108f8fb.jpg" data-zooming-width="3024" data-zooming-height="4032" />
+   </a>
+  <figcaption>
+    Shelly1 connected to push button ☝️ 
+  </figcaption>
+ </figure>
+
+<figure>
+   <a href="/assets/posts/garage_door/shelly_with_pushbutton-a56176421ad65048e8708faf2e849ecef86248f240a4413b54efb7dac1f3cb84.jpg">
+     <img src="/assets/posts/garage_door/shelly_with_pushbutton-a56176421ad65048e8708faf2e849ecef86248f240a4413b54efb7dac1f3cb84.jpg" alt="Shelly connected with push button" class="zooming" data-rjs="/assets/posts/garage_door/shelly_with_pushbutton-a56176421ad65048e8708faf2e849ecef86248f240a4413b54efb7dac1f3cb84.jpg" data-zooming-width="3024" data-zooming-height="4032" />
+   </a>
+  <figcaption>
+    Shelly1 connected to push button
+  </figcaption>
+ </figure>
+
+<h3 id="success-">Success !!</h3>
+
+<p>Here’s a video with the end solution!</p>
+
+<iframe src="https://player.vimeo.com/video/771449940?h=fa1a6f370e" width="320" height="570" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe>
+
+<h3 id="home-assistant-configuration">Home Assistant Configuration</h3>
+
+<p>You can find all my Home Assistant configuration <a href="https://github.com/gsaslis/home-assistant-config/">here</a>.</p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=Controlling+your+Garage+Door+from+your+Phone%20-%20https://gsaslis.github.io/posts/my-smart-garage-door%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/my-smart-garage-door" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-1a8f6e33220f845e569c20b3c09a5d43f87908ea7168ea139ce2135770f7b1b5.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>

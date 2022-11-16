@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Yorgos Saslis | What’s wrong with estimates?</title>
+  <meta name="description" content="Nothing... Apart from pretty much everything with the way we use them...">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="What’s wrong with estimates?">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gsaslis.github.io/posts/what-is-wrong-with-estimates">
+  <meta property="og:description" content="Nothing... Apart from pretty much everything with the way we use them...">
+  <meta property="og:site_name" content="Yorgos Saslis">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://gsaslis.github.io/posts/what-is-wrong-with-estimates">
+  <meta name="twitter:title" content="What’s wrong with estimates?">
+  <meta name="twitter:description" content="Nothing... Apart from pretty much everything with the way we use them...">
+
+  
+    <meta property="og:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+    <meta name="twitter:image" content="https://gsaslis.github.io/assets/og-image-2ee4984c01f7bf66772ca7e6f729c9e93905dce8ef7688a56dcdf57c38e6ad26.png">
+  
+
+  <link href="https://gsaslis.github.io/feed.xml" type="application/rss+xml" rel="alternate" title="Yorgos Saslis Last 10 blog posts" />
+
+  
+
+  
+
+    
+      <link rel="icon" type="image/x-icon" href="/assets/favicon-light-d5801d06410d8e99a9f1a0a91d294240c809fc7e3e89428e2e54fa8c44121777.ico">
+      <link rel="apple-touch-icon" href="/assets/apple-touch-icon-light-400382f1c93627c7e795715635ee93ff3c8cabfac63ba99966efbd9c1a0a734b.png">
+      <link rel="stylesheet" type="text/css" href="/assets/light-9c570dbf67317767203aaee0804570dad3a87129a343653d8b34a5b912f84802.css">
+    
+
+  
+
+</head>
+
+<body>
+  <main>
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav scrollappear">
+  <a href="/" class="header-logo" title="Yorgos Saslis">Yorgos Saslis</a>
+  <ul class="header-links">
+    
+      <li>
+        <a href="/about" title="About me">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-about">
+  <use href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about" xlink:href="/assets/about-ecf154b571ab8034ae00aeed91a3b7ad68db80b46d958753ad6216c919486e88.svg#icon-about"></use>
+</svg>
+
+        </a>
+      </li>
+    
+
+    <li>
+      <a rel="me" href="https://chaos.social/@yorgos" target="_blank" title="Follow me on Mastodon">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon-mastodon">
+  <use href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon" xlink:href="/assets/mastodon-918f931d08b6b6118820472e88a8c4bb29e0dbf637f0fdb17cc884c21a65102b.svg#icon-mastodon"></use>
+</svg>
+
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="https://twitter.com/gsaslis" rel="noreferrer noopener" target="_blank" title="I don't really use Twitter any more">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-twitter">
+  <use href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter" xlink:href="/assets/twitter-8842c33965263ad1b03a978406826677a668f94125d5837e70ab83f24b3213a7.svg#icon-twitter"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://github.com/gsaslis" rel="noreferrer noopener" target="_blank" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-github">
+  <use href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github" xlink:href="/assets/github-094f81040819f34343ee6ffff0980f17e2807b08b595eaaf66ae3554934fd78d.svg#icon-github"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://stackoverflow.com/users/983387" rel="noreferrer noopener" target="_blank" title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-stackoverflow">
+  <use href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow" xlink:href="/assets/stackoverflow-12ba59133ed134d26156d30f095e0222b6039395cf26f2fab0cb6ce3ef2db00d.svg#icon-stackoverflow"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://keybase.io/yorgos" rel="noreferrer noopener" target="_blank" title="Keybase">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-keybase">
+  <use href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase" xlink:href="/assets/keybase-4004cb8fb3e3f1f748f19fbea8a591d0bf5a00865e53977d673f2b09fcabf6e4.svg#icon-keybase"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/gsaslis" rel="noreferrer noopener" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-linkedin">
+  <use href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin" xlink:href="/assets/linkedin-cdc5c107044324a3dfbea2e9ead15873f8dee304c37d73a046988956b706256e.svg#icon-linkedin"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      <li>
+        <a href="/feed.xml" rel="noreferrer noopener" target="_blank" title="RSS">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon-rss">
+  <use href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss" xlink:href="/assets/rss-541ec5cea9cefd10d2fcfec01888f3f231a8829940249835fa7b7b3a12ae0d0d.svg#icon-rss"></use>
+</svg>
+
+        </a>
+      </li>
+    
+    
+  </ul>
+</nav>
+
+
+
+        <article class="article scrollappear">
+          <header class="article-header">
+            <h1>What’s wrong with estimates?</h1>
+            <p>Nothing... Apart from pretty much everything with the way we use them...</p>
+            <div class="article-list-footer">
+  <span class="article-list-date">
+    February 20, 2018
+  </span>
+  <span class="article-list-divider">-</span>
+  <span class="article-list-minutes">
+    
+    
+      10 minute read
+    
+  </span>
+  <span class="article-list-divider">-</span>
+  <div class="article-list-tags">
+    
+      
+      <a href="/tag/productivity" title="See all posts with tag 'Productivity'">Productivity</a>
+    
+      
+      <a href="/tag/programming" title="See all posts with tag 'Programming'">Programming</a>
+    
+      
+      <a href="/tag/agile" title="See all posts with tag 'Agile Software Development'">Agile Software Development</a>
+    
+  </div>
+</div>
+          </header>
+
+          <div class="article-content">
+            <h1 id="whats-wrong-with-estimates">What’s wrong with estimates?</h1>
+
+<p>Nothing… Apart from pretty much everything with the way we use them…</p>
+
+<figure>
+   <a href="/assets/posts/estimates_dilbert-87e62255ba6e5a84e4573f8d2514b616745bf2cfbde2fa883e186fe842b7fb03.gif">
+     <img src="/assets/posts/estimates_dilbert-87e62255ba6e5a84e4573f8d2514b616745bf2cfbde2fa883e186fe842b7fb03.gif" alt="" class="zooming" data-rjs="/assets/posts/estimates_dilbert-87e62255ba6e5a84e4573f8d2514b616745bf2cfbde2fa883e186fe842b7fb03.gif" data-zooming-width="900" data-zooming-height="280" />
+   </a>
+  <figcaption>
+    http://dilbert.com/strip/2009-12-07
+  </figcaption>
+ </figure>
+
+<p>If you are one of the people who actually enjoy spending their time <strong>giving</strong> estimates for how long a piece of software will take to write, you might as well stop reading this post. The last thing I ask of you is to leave me a comment below, so we can get to know each other. I’ve never met <em>one of your kind</em>…</p>
+
+<p>If, on the other hand, you are one of the people who has spent long nights working on deadlines, overcommitted on work you couldn’t deliver, or been held accountable for estimates gone wrong for reasons not entirely within your control, (and we’ve all been there) then I would invite you to read on.</p>
+
+<p>First, let’s go back, for a second, to look at <strong>WHY</strong> we are being asked to provide estimates.</p>
+
+<p>Some of you will immediately think about <em>planning. S</em>ome may think that they lead to <em>predictability</em> in software development iterations. Some may suggest we need them in order to make <em>cost-based decisions. O</em>thers may argue that the analysis during the estimation process and breaking down into small tasks help <em>better understand the requirements</em>. Some may even go so far as propose that making good estimates shows you’re a good professional (<em>“how well do you know your job, if you can’t provide a good estimate”).</em></p>
+
+<p>I have heard <em>all</em> of the above arguments. And there is <em>some</em> truth in them all.</p>
+
+<p>Yet, there is an equal amount of bullshit.</p>
+
+<h2 id="lets-start-with-planning">Let’s start with Planning</h2>
+
+<p>Clients want to know <strong>when</strong> they can finally get their hands on the feature you are working on. And they want to know that so they can plan other activities, coordinate with marketing, sales, etc. Right?</p>
+
+<p><em>Wrong.</em></p>
+
+<p>In fact, this is where the problem starts. Because if we unroll the statement above, we’ll see that you, my dear fellow developer, are now working on a <strong>feature</strong> that some client expects at <strong>a specific date and time</strong>.. Obvious? Why so?</p>
+
+<p>My first problem is the “feature” part.</p>
+
+<p>It seems someone has managed to convince the client to buy the <strong>outcome</strong> of (some weeks or months of) your work. Well, bravó to the sales person cause, in my eyes, what they’ve just done is… sell them a part of the future.</p>
+<blockquote>
+  <h1 id="selling-software-features-is-selling-the-future">Selling software features is selling the future.</h1>
+</blockquote>
+
+<p>This is a subtle, but important point: they have not sold them your <strong>services</strong> for this period of time. We are talking about the <em>outcome</em> here, so they have sold them something which <strong>does not yet exist</strong>.</p>
+
+<p>It may sound strange that I am insisting on this point, because “that’s just how the software industry works”, so you may consider it a given.</p>
+
+<p>However, for me, this is a fundamental concept in our industry that is plain <strong>wrong.</strong> We have trained our customers to expect <strong>features</strong> (I’ve always liked how that word resembles “future”), rather than <strong>services</strong>.</p>
+
+<p>And what is the problem with features, you may ask?</p>
+
+<p>First of all, there’s … the communication gap:</p>
+
+<figure>
+   <a href="/assets/posts/estimates_communication-a752a81c27bd8c32ff6a23baa2b808fc1964d42dd6f6ce563762a9b2f3b78111.jpg">
+     <img src="/assets/posts/estimates_communication-a752a81c27bd8c32ff6a23baa2b808fc1964d42dd6f6ce563762a9b2f3b78111.jpg" alt="Communication is difficult" class="zooming" data-rjs="/assets/posts/estimates_communication-a752a81c27bd8c32ff6a23baa2b808fc1964d42dd6f6ce563762a9b2f3b78111.jpg" data-zooming-width="1106" data-zooming-height="835" />
+   </a>
+  <figcaption>
+    Communication is hard
+  </figcaption>
+ </figure>
+
+<p>We all know the above cartoon to be an exaggeration of what is happening in software development, but we all also know there’s some truth in it. The feature the client is expecting is different than what the team has built.</p>
+
+<p>Agile Software Development comes to address that problem through iterative development and closer collaboration with the client. And yes, this can help, but only when the client is buying <em>iterations</em>, <strong>not</strong> features. Not when we are working in fixed scope, fixed budget contracts, with milestones and deadlines.</p>
+
+<h2 id="estimates--commitments">Estimates == Commitments</h2>
+
+<p>So, let’s talk about deadlines. And let’s start all the way up (on the business level), because once we have taken the first step in this direction, it’s <strong>very hard</strong> to go back.</p>
+
+<p>Since you’ve decided to sell features (in fixed scope contracts), you also have deliverables. Therefore, you have a need for commitments. Because, remember, <strong>the client wants to know</strong> <strong>when the feature you’re working on will be ready</strong>.</p>
+
+<p>And that was when they asked you for an estimate. And you gave some story points. BUT by providing one, you have just made a commitment. <strong>A commitment to deliver</strong>.</p>
+
+<p>This is what we fail to understand about estimates. Estimates are treated as commitments.</p>
+<blockquote>
+  <p>They didn’t really ask “how much work is this”. They asked “when is it going to be ready”.</p>
+</blockquote>
+
+<p>And to put it in our own terms, so that it’s clear:</p>
+<blockquote>
+  <h1 id="you-probably-gave-a-javatimeduration-they-were-looking-for-a-javatimeinstant">You probably gave a <em>java.time.Duration</em>, they were looking for a <em>java.time.Instant.</em></h1>
+</blockquote>
+
+<p>Which brings us back to <em>selling the future</em>. I am asked to make an estimate that is treated as a commitment that something will happen in the future.</p>
+
+<p>And this is how I feel when that happens:</p>
+
+<figure>
+   <a href="/assets/posts/estimates_psychic-82443bac9a45f65d26d7ea394ac7b162f1576b0857595d91f5690d5cd81e2a06.jpg">
+     <img src="/assets/posts/estimates_psychic-82443bac9a45f65d26d7ea394ac7b162f1576b0857595d91f5690d5cd81e2a06.jpg" alt="" class="zooming" data-rjs="/assets/posts/estimates_psychic-82443bac9a45f65d26d7ea394ac7b162f1576b0857595d91f5690d5cd81e2a06.jpg" data-zooming-width="716" data-zooming-height="1024" />
+   </a>
+  <figcaption>
+    This is how predicting the future makes me feel.
+  </figcaption>
+ </figure>
+
+<p><em>And this is all without touching the “Estimating in hours” pitfall. I am taking for granted that — as an industry — we have moved past that.</em></p>
+
+<p>tl;dr</p>
+
+<p>Estimates as a planning tool runs the <strong>great</strong> risk that they estimates are treated as commitments and not as forecasts for the amount of work a certain backlog item includes.</p>
+
+<p>Enough with planning. Let’s move on to the other reasons for estimating:</p>
+
+<h2 id="predictability">Predictability</h2>
+
+<p>The main thinking here is: “If we keep track of how many points / hours / fruit sizes / etc. we’ve burned in the last few iterations, we will be able to start predicting what we will do in the upcoming ones”.</p>
+
+<p>And, yes, I have seen this happen.</p>
+
+<p>But just because it worked for somebody else, it doesn’t mean it will work for you. So, let me pose some challenges, as food for thought for the way you approach predictability:</p>
+
+<ul>
+  <li><em>Are your iterations always a fixed length?</em></li>
+</ul>
+
+<p>If some iterations are 9 days and others 11, you have already introduced one variable into your predictabilityCalculationEquation.</p>
+
+<ul>
+  <li><em>Does your development team also do support?</em></li>
+</ul>
+
+<p>If yes, you will have serious <strong>capacity</strong> fluctuations during your sprints. Nobody can predict how much support will come from clients during a certain iteration. Here’s another variable.</p>
+
+<ul>
+  <li><em>If your development team does support, is there an explicit separation between support / development?</em></li>
+</ul>
+
+<p>The concern here is context switching. The two are different kinds of activities, so you might want to consider ways to completely separate them. Some ideas include: rotating a person that is dedicated to support per day / week, or having the team group all support requests / tasks in a specific time of the day. Context switching is another variable.</p>
+
+<ul>
+  <li><em>Does your development team accept interrupts from other departments?</em></li>
+</ul>
+
+<p>If they do (and worse, if they also do support), then you are probably killing your devs’ <em>flow</em>. But that’s a whole other blog post on its own. Flow greatly affects how effective your developers are and that is very (very) hard to measure. With your understanding, i’ll call it a <em>superVariable</em> for your equation.</p>
+
+<p>On the other hand, tracking effectiveness can be surprisingly simple. I don’t remember where I heard this concept from to attribute it properly, but I absolutely love it:</p>
+<blockquote>
+  <h1 id="if-you-only-count-the-number-of-uninterrupted-hours-of-work-you-already-have-a-pretty-good-idea-of-how-effective-your-team-is">If you only count the <strong>number of uninterrupted hours of work, you already have a pretty good idea of how effective your team is!</strong></h1>
+</blockquote>
+
+<p>Compare that to all the effort around tracking predictability…</p>
+
+<ul>
+  <li><em>Does your team accept unplanned work during their iterations (of otherwise frozen requirements)?</em></li>
+</ul>
+
+<p>If it does, and this is not support, then perhaps you should think whether iterations offer you much value anyway. Either way, the amount of unplanned work is another variable to consider.</p>
+
+<ul>
+  <li>Do retrospectives take place after every sprint?</li>
+</ul>
+
+<p>If it is predictability you’re after, do your teams actually spend time actively pursuing it? Or is this left to chance? Are you even tracking all the variables in your predictabilityCalculationEquation?</p>
+
+<p>The point I’m trying to make with all this, is that predictability is affected by a bunch of factors that have very little to do with how accurate your team’s estimates were. But more on that when we talk about <em>velocity</em> below.</p>
+
+<h2 id="cost-based-decisions">Cost-Based Decisions</h2>
+
+<p>Ask any businessman and he will tell you he needs to know what each feature is going to cost him before he can sign off on you building it.</p>
+
+<p>I would too.</p>
+
+<p>What makes all the difference in the world, however, is precision. Clearly, a few cents won’t make a difference. Neither will a few dollars / euros. A few tens of euros/dollars <em>probably</em> won’t either. When we start getting to hundreds, <em>chances are</em> you’ll start raising some eyebrows. Thousands, <em>yup probably</em>… But then again, it still depends on the project and the feature itself. What’s a few more thousand on a million dollar project?</p>
+<blockquote>
+  <h1 id="its-all-relevant">It’s all relevant.</h1>
+</blockquote>
+
+<p>So, if your customer doesn’t really care whether a task takes 4 hours or 6, why are you being forced to estimate on <strong>hours</strong>?</p>
+
+<p>Does it matter when you are delivering <strong>value</strong> <strong>that will greatly outweigh the</strong> <strong>cost</strong>? Remember: the value of a product is not the same thing as its price. A product with the exact same price probably has a different value for each of you reading this post.</p>
+
+<p>And in most cases, your features are sold for their value (to the customer). Not their cost (your work hours). This is a crucial distinction in the business model of a company, so it is important to know what kind of company you work for.</p>
+
+<p>As a general note before closing off this cost-based decisions part, please note: the focus here is on the <em>estimate</em> part, so that a decision can be made based on the cost. It doesn’t go into the retrospective part of tracking down what developers are spending their hours on, whether for lack of trust, or for understanding cost centres.</p>
+
+<h2 id="better-understanding-the-requirements">Better Understanding The Requirements</h2>
+
+<p>Moving on. Another reason for using estimates was that the estimation process typically undertaken at the start of an iteration (e.g. in a sprint planning meeting), allow you to refine the requirements and better understand what the customer wants.</p>
+
+<p>I won’t go into too much detail on this one. Not only do I agree we need analysis, but, in fact, we are probably not doing enough upfront design. Some Agile Software Development methodologies don’t allow for too much of it.</p>
+
+<p>Regardless, this still doesn’t go to say that this should come <em>through</em> estimates.</p>
+
+<h2 id="professionalism">Professionalism</h2>
+
+<p>I won’t even go there. People who have brought up this argument have confused professionalism with empiricism. Being a good professional is not the same as being an experienced one.</p>
+
+<h2 id="time-for-solutions">Time for solutions</h2>
+
+<p>So… rants can be fun! Unfortunately, they’re not constructive unless they end up with some suggestions. Here are mine, because I don’t think estimates are completely worthless…. BUT:</p>
+
+<ul>
+  <li>
+    <p>there *IS *a lot of <strong>waste</strong> in trying to reach <strong>accurate</strong> estimates. We spend significantly more time improving the accuracy than what the business case justifies.</p>
+  </li>
+  <li>
+    <p>we should <strong>stop using estimates as commitments</strong>. This will allow us to eventually come up with more realistic planning — one that’s not based on deadlines.</p>
+  </li>
+  <li>
+    <p>we should stop worrying about <em>predictability</em> and** simply care about <em>effectiveness</em>**. If we trust our team, we should only care that they are being as effective as possible.</p>
+  </li>
+  <li>
+    <p>tracking Velocity is fine, as long as we are tracking just the Unit; not the actual number. If you have heard about using fruit sizes for estimates, then this will sound similar. However, the idea here is that we split the backlog items we estimate into 4 categories/buckets: “Hours”, “Days”, “Weeks”, “Months”.</p>
+  </li>
+</ul>
+
+<p>This means:</p>
+
+<ul>
+  <li>
+    <p>“hours to complete” vs.</p>
+  </li>
+  <li>
+    <p>“days to complete” vs.</p>
+  </li>
+  <li>
+    <p>“weeks to complete” vs.</p>
+  </li>
+  <li>
+    <p>“months to complete” (you can probably make do even without this one).</p>
+  </li>
+</ul>
+
+<p><em>I call these <strong>Time Unit Buckets</strong>.</em></p>
+
+<p>In doing so:</p>
+
+<ul>
+  <li>
+    <p>First of all, we are considerably <strong>reducing the error margin</strong> for estimates.</p>
+  </li>
+  <li>
+    <p>We are keeping units of time which are <strong>easier for humans to relate to</strong>.</p>
+  </li>
+  <li>
+    <p>We are clearly communicating to other departments that** they should not expect hard deadlines from r&amp;d**. Which is not a new thing btw, considering everyone already knows the truth about deadlines…</p>
+  </li>
+</ul>
+
+<figure>
+   <a href="/assets/posts/estimates_deadlines-5978e8944d3b6a945052e84eaf4f55fc33611b8d7857a96733e237b6056e8c6d.jpg">
+     <img src="/assets/posts/estimates_deadlines-5978e8944d3b6a945052e84eaf4f55fc33611b8d7857a96733e237b6056e8c6d.jpg" alt="Deadlines" class="zooming" data-rjs="/assets/posts/estimates_deadlines-5978e8944d3b6a945052e84eaf4f55fc33611b8d7857a96733e237b6056e8c6d.jpg" data-zooming-width="500" data-zooming-height="500" />
+   </a>
+  <figcaption>
+    
+  </figcaption>
+ </figure>
+
+<ul>
+  <li>
+    <p>We make estimating / forecasting <strong>very (very!) fast</strong>. Once the main clarifications have been made, consensus doesn’t take more than a minute or two.</p>
+  </li>
+  <li>
+    <p>We can still track velocity as number of items in each bucket. And then <strong>go back to tracking effectiveness</strong>.</p>
+  </li>
+</ul>
+
+<p>Please note what I am suggesting here is not entirely new or original. In fact, this is a similar approach to <a href="https://www.mountaingoatsoftware.com/blog/estimating-with-tee-shirt-sizes">t-shirt sizes</a>, or <a href="https://jkwerner2.wordpress.com/2011/03/11/introducing-agile-planning-with-apples-chikoos-raspberries-jackfruits-and-watermelons/">pieces of fruit</a>. The important thing to keep in mind is <strong>relative sizing.</strong></p>
+
+<p>However, the trouble is, people still like to think in terms of <strong>time</strong>. I’ve witnessed many teams who always bring the discussion back to… hours. They may be talking to you about story points, but you can just tell… in their heads, it’s all “hours” and “days”.</p>
+
+<p>And this is why i like the <strong>Time Unit Buckets</strong> analogy. Because it forces people to think in relative terms — and in so doing, it helps everyone understand that estimates are not commitments. But it also offers an easier mental model: time is easier to relate to…</p>
+
+<p>All you have to do is <strong>forget the number</strong> you would put in front of the time unit, and just <strong>keep the unit itself</strong>.</p>
+
+          </div>
+          <div class="article-share">
+            
+            
+            <a href="https://twitter.com/home?status=What%E2%80%99s+wrong+with+estimates?%20-%20https://gsaslis.github.io/posts/what-is-wrong-with-estimates%20by%20@gsaslis" title="Share on Twitter" rel="noreferrer noopener" target="_blank">
+              <svg viewBox="0 0 512 512"><path d="M492 109.5c-17.4 7.7-36 12.9-55.6 15.3 20-12 35.4-31 42.6-53.6 -18.7 11.1-39.4 19.2-61.5 23.5C399.8 75.8 374.6 64 346.8 64c-53.5 0-96.8 43.4-96.8 96.9 0 7.6 0.8 15 2.5 22.1 -80.5-4-151.9-42.6-199.6-101.3 -8.3 14.3-13.1 31-13.1 48.7 0 33.6 17.2 63.3 43.2 80.7C67 210.7 52 206.3 39 199c0 0.4 0 0.8 0 1.2 0 47 33.4 86.1 77.7 95 -8.1 2.2-16.7 3.4-25.5 3.4 -6.2 0-12.3-0.6-18.2-1.8 12.3 38.5 48.1 66.5 90.5 67.3 -33.1 26-74.9 41.5-120.3 41.5 -7.8 0-15.5-0.5-23.1-1.4C62.8 432 113.7 448 168.3 448 346.6 448 444 300.3 444 172.2c0-4.2-0.1-8.4-0.3-12.5C462.6 146 479 129 492 109.5z"/></svg>
+            </a>
+<!--            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gsaslis.github.io/posts/what-is-wrong-with-estimates" title="Share on Facebook" rel="noreferrer noopener" target="_blank">-->
+<!--              <svg viewBox="0 0 512 512"><path d="M288 192v-38.1c0-17.2 3.8-25.9 30.5-25.9H352V64h-55.9c-68.5 0-91.1 31.4-91.1 85.3V192h-45v64h45v192h83V256h56.4l7.6-64H288z"/></svg>-->
+<!--            </a>-->
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script src="https://https-gsaslis-github-io.disqus.com/embed.js" async defer></script>
+            <noscript>Please enable JavaScript to view the comments.</noscript>
+          
+        </article>
+        <footer class="footer scrollappear">
+  <p>
+    Powered by <a href="https://github.com/nielsenramon/chalk" rel="noreferrer noopener" target="_blank" title="Download Chalk">Chalk</a>:
+    a Jekyll template, built by <a href="/about" title="About me">Nielsen Ramon</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  
+
+<script src="/assets/vendor-1a8f6e33220f845e569c20b3c09a5d43f87908ea7168ea139ce2135770f7b1b5.js" type="text/javascript"></script>
+
+
+  <script src="/assets/webfonts-96493456d319d1bf419afdf8701552d4d486fee6afd304897d4fd81eb4e0cc0b.js" type="text/javascript"></script>
+
+
+
+  <script src="/assets/scrollappear-e2da8ea567e418637e31266cc5302126eaa79f62a2273739086358b589a89ee6.js" type="text/javascript"></script>
+
+
+<script src="/assets/application-cfde13ac81ddaf4351b2e739603e2baf688d0fcc9aba613fe62bbb1c7b037fb9.js" type="text/javascript"></script>
+
+
+</body>
+</html>
