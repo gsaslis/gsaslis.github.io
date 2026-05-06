@@ -26,7 +26,12 @@ rm -R _site/
 # Push to pages.
 git add --force --all
 git commit --allow-empty --message "$(git log -1 --pretty=%B) [ci skip]"
-git push --force --quiet origin pages
+git push --force --quiet rad pages
+
+rad sync -a
+
+curl https://grebedoc.dev/ -X PUT -H "Host: yorgos.net.gr" --data "https://yorgos.radicle.garden/z4L41aRs71Hvfao3DXkP9B9XbYe9K.git"
+
 
 # Move back to previous branch.
 git checkout -
