@@ -3,7 +3,7 @@
   <ul class="header-links">
     {% if site.about_enabled == true %}
       <li>
-        <a href="{{ 'about' | relative_url }}" title="About me">
+        <a href="{{ '/about.html' | relative_url }}" title="About me">
           {% include svg-icon.html icon="about" %}
         </a>
       </li>
@@ -192,7 +192,7 @@
     {% for tag in tags %}
       {% if forloop.index > 10 %}
         <li>...</li>
-        <li><a href="/tags">Show all</a></li>
+        <li><a href="/tags.html">Show all</a></li>
         {% break %}
       {% endif %}
         <li><a href="{{ 'tag/' | relative_url }}{{ tag[0] }}">{{ tag[0] | capitalize }}</a></li>
