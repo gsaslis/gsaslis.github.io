@@ -1,4 +1,0 @@
----
-slug: npm
-name: NPM
----

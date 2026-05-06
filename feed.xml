@@ -1,20 +1,90 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="https://www.w3.org/2005/Atom" xmlns:dc="https://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>Yorgos Saslis</title>
+    <description></description>
+    <link>https://yorgos.net.gr</link>
+    <atom:link href="https://yorgos.net.gr/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Working on a better home for Open Source</title>
+        <description>GitHub is giving us even more reasons to consider alternatives. I'm so happy I'm working on one of them!</description>
+        <pubDate>Mon, 04 May 2026 00:00:00 +0300</pubDate>
+        <link>https://yorgos.net.gr/posts/working-on-a-better-home-for-open-source.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/working-on-a-better-home-for-open-source.html</guid>
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>Controlling your Garage Door from your Phone</title>
+        <description>How to convert your existing garage door, so you can operate it from your mobile phone</description>
+        <pubDate>Tue, 15 Nov 2022 23:00:00 +0200</pubDate>
+        <link>https://yorgos.net.gr/posts/my-smart-garage-door.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/my-smart-garage-door.html</guid>
+      </item>
+    
+      <item>
+        <title>How-to: Smart Roller Shutters</title>
+        <description>How to convert your existing roller shutters, so you can operate them from your mobile phone</description>
+        <pubDate>Wed, 26 Oct 2022 00:00:00 +0300</pubDate>
+        <link>https://yorgos.net.gr/posts/smart-roller-shutters.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/smart-roller-shutters.html</guid>
+      </item>
+    
+      <item>
+        <title>I will never work for you</title>
+        <description>A list of industry sectors that I would never like to work for.</description>
+        <pubDate>Mon, 25 Jul 2022 00:00:00 +0300</pubDate>
+        <link>https://yorgos.net.gr/posts/i-will-never-work-for-you.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/i-will-never-work-for-you.html</guid>
+      </item>
+    
+      <item>
+        <title>Effective Meetings</title>
+        <description>Many meetings are a pain. But the principles below take most of that pain away!</description>
+        <pubDate>Mon, 10 Jan 2022 23:00:00 +0200</pubDate>
+        <link>https://yorgos.net.gr/posts/effective-meetings.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/effective-meetings.html</guid>
+      </item>
+    
+      <item>
+        <title>What’s up with Web3 ?</title>
+        <description>A lot of hype around web3, but also promising developments around decentralization!</description>
+        <pubDate>Thu, 06 Jan 2022 23:00:00 +0200</pubDate>
+        <link>https://yorgos.net.gr/posts/whats-up-with-web3.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/whats-up-with-web3.html</guid>
+      </item>
+    
+      <item>
+        <title>No DMs For Work Tasks</title>
+        <description>This post explains why you should 'never' discuss about work tasks using Direct/Private Messages (DM/PM)!</description>
+        <pubDate>Thu, 12 Aug 2021 00:00:00 +0300</pubDate>
+        <link>https://yorgos.net.gr/posts/no-dms-for-work-tasks.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/no-dms-for-work-tasks.html</guid>
+      </item>
+    
+      <item>
+        <title>Announcing your Availability in Slack</title>
+        <description>If your team forces you to send a message in some slack channel when you leave your keyboard (or if you have colleagues that do this), this post is for you.</description>
+        <pubDate>Wed, 31 Mar 2021 00:00:00 +0300</pubDate>
+        <link>https://yorgos.net.gr/posts/status-updates.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/status-updates.html</guid>
+      </item>
+    
+      <item>
+        <title>Acronyms Are Dead! Long Live Acronyms!</title>
+        <description>Acronyms are a pain, but also useful. See how you can get the best of both worlds, so you can both type less and save others having to understand obscure acronyms!</description>
+        <pubDate>Tue, 09 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://yorgos.net.gr/posts/acronyms-are-dead-long-live-acronyms.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/acronyms-are-dead-long-live-acronyms.html</guid>
+      </item>
+    
+      <item>
+        <title>How-to Create Focus: My Routine</title>
+        <description>If you are struggling to focus on a specific work task, and are drowned by ~notifications~ interruptions, you might want to consider a routine that helps you avoid them.</description>
+        <pubDate>Thu, 04 Mar 2021 23:00:00 +0200</pubDate>
+        <link>https://yorgos.net.gr/posts/creating-focus.html</link>
+        <guid isPermaLink="true">https://yorgos.net.gr/posts/creating-focus.html</guid>
+      </item>
+    
   </channel>
 </rss>
